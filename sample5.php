@@ -88,7 +88,8 @@ if (isset($_POST["keyword"]) && isset($_POST["number"])) {
     
     foreach($tf_data[@$_POST["keyword"]] as $key => $val ) {
       if (@$_POST["number"] == @$fc_data[$key] && @$_POST["number"]<>null){
-		echo "<img src='$key'><br>\n";
+		echo "<a href = '$str1'><img src='$key'></a><br>\n";
+          //隅田変更aaaa
 		echo "キーワード出現回数＝".$val."回<br>\n";
 		echo "写真中の人の数＝".@$fc_data[$key]."人<br>\n";
 		echo "$key<br><br><br>\n";
