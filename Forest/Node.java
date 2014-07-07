@@ -33,6 +33,10 @@ public class Node extends JLabel
      */
     public Node(int num,String name)
     {
+        this.nodeNumber = num;
+        this.nodeName = name;
+        this.Parents = new ArrayList<Node>();
+        this.Children = new ArrayList<Node>();
         
     }
     
@@ -41,7 +45,7 @@ public class Node extends JLabel
      */
     public int getNumber()
     {
-        
+        return this.nodeNumber;
     }
     
     /*
@@ -49,7 +53,7 @@ public class Node extends JLabel
      */
     public String getName()
     {
-        
+        return this.nodeName;
     }
     
     /*
@@ -57,7 +61,7 @@ public class Node extends JLabel
      */
     public int getDepth()
     {
-        
+        return this.depth;
     }
     
     /*
@@ -65,7 +69,7 @@ public class Node extends JLabel
      */
     public ArrayList<Node> getParents()
     {
-        
+        return this.Parents;
     }
     
     /*
@@ -73,7 +77,7 @@ public class Node extends JLabel
      */
     public ArrayList<Node> getChildren()
     {
-        
+        return this.Children;
     }
     
     /*
@@ -81,7 +85,7 @@ public class Node extends JLabel
      */
     public void setParent(Node aNode)
     {
-        
+        this.Parents.add(aNode);
     }
     
     /*
@@ -89,6 +93,6 @@ public class Node extends JLabel
      */
     public void setChild(Node aNode)
     {
-        
+        this.Children.add(aNode);
     }
 }

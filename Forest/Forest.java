@@ -53,7 +53,7 @@ public class Forest extends Object
      */
     public HashMap<Integer,Node> getNode()
     {
-        
+        return this.nodes;
     }
     
     /*
@@ -61,14 +61,14 @@ public class Forest extends Object
      */
     public ArrayList<Node> getRoot()
     {
-        
+        return this.roots;
     }
     
     /*
      * ブランチのゲッター
      */
     public ArrayList<Branch> getBranch(){
-        
+        return this.branches;
     }
     
     

@@ -18,7 +18,8 @@ public class Branch extends Object
      */
     public Branch(Node parentNode, Node childNode)
     {
-        
+        this.setParent(parentNode);
+        this.setChild(childNode);
     }
     
     /*
@@ -26,7 +27,7 @@ public class Branch extends Object
      */
     public void setParent(Node aNode)
     {
-        
+        this.parentNode = aNode;
     }
     
     /*
@@ -34,7 +35,7 @@ public class Branch extends Object
      */
     public void setChild(Node aNode)
     {
-        
+        this.childNode = aNode;
     }
     
     /*
@@ -42,7 +43,7 @@ public class Branch extends Object
      */
     public Node getParent()
     {
-        
+        return parentNode;
     }
     
     /*
@@ -50,6 +51,6 @@ public class Branch extends Object
      */
     public Node getChild()
     {
-        
+        return childNode;
     }
 }
