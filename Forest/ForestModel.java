@@ -19,6 +19,7 @@ public class ForestModel extends mvc.Model
      * コンストラクタ
      */
     public ForestModel(){
+        super();
         
     }
     
@@ -43,7 +44,11 @@ public class ForestModel extends mvc.Model
      */
     public File Filechooser()
     {
-        
+        JFileChooser ch = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Text File", "txt");
+        ch.setFileFilter(filter);
+        ch.showOpenDialog(null);
+        return ch.getSelectedFile();
     }
     
     
