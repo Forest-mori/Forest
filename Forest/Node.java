@@ -1,5 +1,7 @@
 package forest;
 
+import javax.swing.JLabel;
+import java.util.ArrayList;
 
 public class Node extends JLabel
 {

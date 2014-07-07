@@ -1,14 +1,16 @@
 package forest;
 
+import java.awt.Graphics;
+
 public class ForestView extends mvc.View
 {
     
     /*
      * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。
      */
-    public ForestView(ForestModel aForest,ForestController aController)
+    public ForestView(ForestModel aModel,ForestController aController)
     {
-        
+        super(aModel,aController);
     }
     
     

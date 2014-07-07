@@ -1,6 +1,8 @@
 package forest;
 
 import java.io.File;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -20,6 +22,8 @@ public class ForestModel extends mvc.Model
      */
     public ForestModel(){
         super();
+        this.aForest = new Forest();
+        this.aForest.read(this.Filechooser());
         
     }
     
