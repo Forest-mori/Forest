@@ -1,5 +1,9 @@
 package forest;
 
+
+/*
+ * ブランチクラス
+ */
 public class Branch extends Object
 {
     
