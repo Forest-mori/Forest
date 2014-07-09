@@ -46,10 +46,28 @@ public class Forest extends Object
         try{
             BufferedReader br = new BufferedReader(new FileReader(aFile));
             String str = br.readLine();
+            int a = 0;
+            String aaa;
+            int count = 0;
             while(str != null){
-                System.out.println(str);
-                
+                //System.out.println(str);
+                if(str.equals("trees:"))
+                {
+                    a = 1;
+                }
+                if(a == 1)
+                {
+                    for(int j = 0; j < str.length();j++)
+                    {
+                       aaa = str.substring(j,j+1);
+                        if(aaa.equals("-"))
+                            count++;
+                    }
+                    System.out.println(count);
+                }
+            
                 str = br.readLine();
+                count = 0;
             }
             
             br.close();
