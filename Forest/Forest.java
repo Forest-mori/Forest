@@ -18,6 +18,11 @@ public class Forest extends Object
     private HashMap<Integer,Node> nodes;
     
     /*
+     * 一時的にノードの深さを保存する
+     */
+    private HashMap<Integer,Integer> depths;
+    
+    /*
      * ブランチを束縛する
      */
     private ArrayList<Branch> branches;
@@ -46,26 +51,8 @@ public class Forest extends Object
         try{
             BufferedReader br = new BufferedReader(new FileReader(aFile));
             String str = br.readLine();
-            int a = 0;
-            String aaa;
-            int count = 0;
             while(str != null){
-                //System.out.println(str);
-                if(str.equals("trees:"))
-                {
-                    a = 1;
-                }
-                if(a == 1)
-                {
-                    for(int j = 0; j < str.length();j++)
-                    {
-                       aaa = str.substring(j,j+1);
-                        if(aaa.equals("-"))
-                            count++;
-                    }
-                    System.out.println(count);
-                }
-            
+                System.out.println(str);
                 str = br.readLine();
                 count = 0;
             }
