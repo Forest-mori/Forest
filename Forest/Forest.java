@@ -54,7 +54,6 @@ public class Forest extends Object
             while(str != null){
                 System.out.println(str);
                 str = br.readLine();
-                count = 0;
             }
             
             br.close();
