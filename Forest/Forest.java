@@ -84,12 +84,17 @@ public class Forest extends Object
                         if(depth.equals("-"))
                             count++;
                     }
-                    this.depths.put(nodenum,count/2);
-                    count++;
+                    if(count == 0)
+                    {
+                        
+                    }else{
+                        this.depths.put(nodenum,count/2);
+                        count++;
+                    }
                 }
                 
                 
-                else if(this.textType == 1 || this.textType = 2)
+                else if(this.textType == 1 || this.textType == 2)
                 {
                     this.create(str);
                 }
@@ -117,7 +122,7 @@ public class Forest extends Object
         {
             
         }
-        else if(this.textType = 2)
+        else if(this.textType == 2)
         {
             
         }
