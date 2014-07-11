@@ -17,6 +17,7 @@ public class Forest extends Object
      */
     private HashMap<Integer,Node> nodes;
     
+    
     /*
      * 一時的にノードの深さを保存する
      */
@@ -33,6 +34,11 @@ public class Forest extends Object
     private ArrayList<Node> roots;
     
     /*
+     * テキストのタイプを表す。tree = 0,node = 1, branch = 2
+     */
+    private int textType;
+    
+    /*
      * フォレストのコンストラクタ
      */
     public Forest()
@@ -40,6 +46,8 @@ public class Forest extends Object
         this.nodes = new HashMap<Integer,Node>();
         this.branches = new ArrayList<Branch>();
         this.roots = new ArrayList<Node>();
+        this.depths = new HashMap<Integer,Integer>();
+        this.textType = 5;
         
     }
     
@@ -51,9 +59,45 @@ public class Forest extends Object
         try{
             BufferedReader br = new BufferedReader(new FileReader(aFile));
             String str = br.readLine();
+            int nodenum = 1;
             while(str != null){
                 System.out.println(str);
+                
+                if(str.equals("trees:"))
+                {
+                    this.textType = 0;
+                }
+                else if(str.equals("nodes:"))
+                {
+                    this.textType = 1;
+                }
+                else if(str.equals("branches:"))
+                {
+                    this.textType = 2;
+                }
+                else if(this.textType == 0)
+                {
+                    int count = 0;
+                    for(int j = 0; j < str.length();j++)
+                    {
+                        String depth = str.substring(j,j+1);
+                        if(depth.equals("-"))
+                            count++;
+                    }
+                    this.depths.put(nodenum,count/2);
+                    count++;
+                }
+                
+                
+                else if(this.textType == 1 || this.textType = 2)
+                {
+                    this.create(str);
+                }
+                
+                
                 str = br.readLine();
+                
+                
             }
             
             br.close();
@@ -67,7 +111,8 @@ public class Forest extends Object
     /*
      * readで読み込んだデータを元に木を作る
      */
-    public void create(String data){
+    public void create(String data)
+    {
         
     }
     
