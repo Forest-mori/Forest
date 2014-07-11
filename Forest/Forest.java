@@ -113,7 +113,15 @@ public class Forest extends Object
      */
     public void create(String data)
     {
-        
+        if(this.textType == 1)
+        {
+            
+        }
+        else if(this.textType = 2)
+        {
+            
+        }
+        return;
     }
     
     /*
