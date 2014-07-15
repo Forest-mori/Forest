@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Forest extends Object
 {
     /*
-     * ノードを束縛する
+     * ノードを番号と一緒に束縛する
      */
     private HashMap<Integer,Node> nodes;
     
@@ -120,11 +120,13 @@ public class Forest extends Object
     {
         if(this.textType == 1)
         {
-            
+            String[] node = data.split(",");
+            Node aNode = new (Integer.parseInt(node[0]),node[1]);
+            this.nodes.put(Intger.parseInt(node[0]),aNode);
         }
         else if(this.textType == 2)
         {
-            
+            String[] branch = data.split(",");
         }
         return;
     }
