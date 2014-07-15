@@ -1,5 +1,13 @@
 package forest;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
 
 import java.io.IOException;
 import java.io.File;
@@ -38,10 +46,16 @@ public class Forest extends Object
      */
     private int textType;
     
+    /**
+     *
+     */
+    
+    
+    
     /*
      * フォレストのコンストラクタ
      */
-    public Forest()
+    public Forest(ForestModel aModel)
     {
         this.nodes = new HashMap<Integer,Node>();
         this.branches = new ArrayList<Branch>();
@@ -121,8 +135,8 @@ public class Forest extends Object
         if(this.textType == 1)
         {
             String[] node = data.split(",");
-            Node aNode = new (Integer.parseInt(node[0]),node[1]);
-            this.nodes.put(Intger.parseInt(node[0]),aNode);
+            Node aNode = new Node(Integer.parseInt(node[0]),node[1]);
+            this.nodes.put(Integer.parseInt(node[0]),aNode);
         }
         else if(this.textType == 2)
         {

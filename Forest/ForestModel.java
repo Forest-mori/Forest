@@ -6,6 +6,13 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import javax.swing.JFrame;
 
 
 
@@ -15,14 +22,15 @@ public class ForestModel extends mvc.Model
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-    
-    
+  
     /*
      * コンストラクタ
      */
     public ForestModel(){
         super();
-        this.aForest = new Forest();
+        
+        aForest = new Forest(this);
+        aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
         
     }
@@ -43,6 +51,7 @@ public class ForestModel extends mvc.Model
         
     }
     
+    
     /*
      * ファイルを選んでくるメソッド
      */
@@ -54,6 +63,7 @@ public class ForestModel extends mvc.Model
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
+   
     
     
 }
