@@ -18,12 +18,12 @@ import javax.swing.JFrame;
 
 public class ForestModel extends mvc.Model
 {
-    /*
+    /**
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
   
-    /*
+    /**
      * コンストラクタ
      */
     public ForestModel(){
@@ -35,7 +35,7 @@ public class ForestModel extends mvc.Model
         
     }
     
-    /*
+    /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
     public void actionPerformed(ActionEvent anActionEvent)
@@ -52,7 +52,7 @@ public class ForestModel extends mvc.Model
     }
     
     
-    /*
+    /**
      * ファイルを選んでくるメソッド
      */
     public File Filechooser()

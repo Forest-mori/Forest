@@ -20,28 +20,28 @@ import java.io.IOException;
 
 public class Forest extends Object
 {
-    /*
+    /**
      * ノードを番号と一緒に束縛する
      */
     private HashMap<Integer,Node> nodes;
     
     
-    /*
+    /**
      * 一時的にノードの深さを保存する
      */
     private HashMap<Integer,Integer> depths;
     
-    /*
+    /**
      * ブランチを束縛する
      */
     private ArrayList<Branch> branches;
     
-    /*
+    /**
      * ルートノードを束縛する
      */
     private ArrayList<Node> roots;
     
-    /*
+    /**
      * テキストのタイプを表す。tree = 0,node = 1, branch = 2
      */
     private int textType;
@@ -52,7 +52,7 @@ public class Forest extends Object
     
     
     
-    /*
+    /**
      * フォレストのコンストラクタ
      */
     public Forest(ForestModel aModel)
@@ -65,7 +65,7 @@ public class Forest extends Object
         
     }
     
-    /*
+    /**
      * ForestModelで取ってきたテキストファイルを読み込む
      */
     public void read(File aFile)
@@ -127,7 +127,7 @@ public class Forest extends Object
         }
     }
     
-    /*
+    /**
      * readで読み込んだデータを元に木を作る
      */
     public void create(String data)
@@ -145,7 +145,7 @@ public class Forest extends Object
         return;
     }
     
-    /*
+    /**
      * 探索処理をして、モデルに通知して画面を更新する
      */
     public void visit()
@@ -153,7 +153,7 @@ public class Forest extends Object
         
     }
     
-    /*
+    /**
      * ノードのゲッター
      */
     public HashMap<Integer,Node> getNode()
@@ -161,7 +161,7 @@ public class Forest extends Object
         return this.nodes;
     }
     
-    /*
+    /**
      * ルートノードのゲッター
      */
     public ArrayList<Node> getRoot()
@@ -169,7 +169,7 @@ public class Forest extends Object
         return this.roots;
     }
     
-    /*
+    /**
      * ブランチのゲッター
      */
     public ArrayList<Branch> getBranch(){
