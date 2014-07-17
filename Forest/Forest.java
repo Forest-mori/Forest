@@ -1,35 +1,28 @@
 package forest;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
-import javax.swing.JFrame;
-
-
-import java.io.IOException;
-import java.io.File;
 import java.util.HashMap;
-import java.util.ArrayList;
+
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.TreeMap;
 
 public class Forest extends Object
 {
     /**
      * ノードを番号と一緒に束縛する
      */
-    private HashMap<Integer,Node> nodes;
+    private TreeMap<Integer,Node> nodes;
     
     
     /**
      * 一時的にノードの深さを保存する
      */
-    private HashMap<Integer,Integer> depths;
+    private HashMap<String,Integer> depths;
     
     /**
      * ブランチを束縛する
@@ -46,21 +39,16 @@ public class Forest extends Object
      */
     private int textType;
     
-    /**
-     *
-     */
-    
-    
     
     /**
      * フォレストのコンストラクタ
      */
     public Forest(ForestModel aModel)
     {
-        this.nodes = new HashMap<Integer,Node>();
+        this.nodes = new TreeMap<Integer,Node>();
         this.branches = new ArrayList<Branch>();
         this.roots = new ArrayList<Node>();
-        this.depths = new HashMap<Integer,Integer>();
+        this.depths = new HashMap<String,Integer>();
         this.textType = 5;
         
     }
@@ -73,7 +61,7 @@ public class Forest extends Object
         try{
             BufferedReader br = new BufferedReader(new FileReader(aFile));
             String str = br.readLine();
-            int nodenum = 1;
+            
             while(str != null){
                 System.out.println(str);
                 
@@ -91,20 +79,27 @@ public class Forest extends Object
                 }
                 else if(this.textType == 0)
                 {
-                    int count = 0;
-                    for(int j = 0; j < str.length();j++)
+                    int depthcount = 0;
+                    String nodeName = null;
+                    
+                    String depth[] = str.split("-- ");
+                    for(int k = 0; k < depth.length; k++)
                     {
-                        String depth = str.substring(j,j+1);
-                        if(depth.equals("-"))
-                            count++;
-                    }
-                    if(count == 0)
-                    {
+                        if(depth[k].equals("|"))
+                        {
+                           
+                            depthcount = depthcount + 1;
+                        }
+                        else
+                        {
+                            nodeName = depth[k];
                         
-                    }else{
-                        this.depths.put(nodenum,count/2);
-                        count++;
+                        }
                     }
+                    
+                    this.depths.put(nodeName,depthcount);
+                    
+                    
                 }
                 
                 
@@ -134,13 +129,24 @@ public class Forest extends Object
     {
         if(this.textType == 1)
         {
-            String[] node = data.split(",");
-            Node aNode = new Node(Integer.parseInt(node[0]),node[1]);
+            
+            String[] node = data.split(", ");
+            Node aNode = new Node(Integer.parseInt(node[0]),node[1],this.depths.get(node[1]));
             this.nodes.put(Integer.parseInt(node[0]),aNode);
+            
+            System.out.println("名前＝" + node[1] + "深さ＝" + aNode.getDepth());
         }
         else if(this.textType == 2)
         {
-            String[] branch = data.split(",");
+            String[] branch = data.split(", ");
+            Node parentNode = this.nodes.get(Integer.parseInt(branch[0]));
+            Node childNode = this.nodes.get(Integer.parseInt(branch[1]));
+            parentNode.setChild(childNode);
+            childNode.setParent(parentNode);
+            this.nodes.put(Integer.parseInt(branch[0]), parentNode);
+            this.nodes.put(Integer.parseInt(branch[1]), childNode);
+            Branch aBranch = new Branch(parentNode,childNode);
+            this.branches.add(aBranch);
         }
         return;
     }
@@ -156,7 +162,7 @@ public class Forest extends Object
     /**
      * ノードのゲッター
      */
-    public HashMap<Integer,Node> getNode()
+    public TreeMap<Integer,Node> getNode()
     {
         return this.nodes;
     }

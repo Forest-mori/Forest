@@ -24,6 +24,11 @@ public class ForestModel extends mvc.Model
     private Forest aForest;
   
     /**
+     * ForestViewを束縛する
+     */
+    private ForestView aView;
+    
+    /**
      * コンストラクタ
      */
     public ForestModel(){

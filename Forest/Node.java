@@ -2,6 +2,7 @@ package forest;
 
 import javax.swing.JLabel;
 import java.util.ArrayList;
+import java.awt.Point;
 
 public class Node extends Object
 {
@@ -35,17 +36,24 @@ public class Node extends Object
      */
     private boolean visit;
     
+    
+    /**
+     * ノードの一座標を束縛する
+     */
+    private Point aPoint;
+    
     /**
      * ノードのコンストラクタ
      */
-    public Node(int num,String name)
+    public Node(int num,String name,int depth)
     {
         this.nodeNumber = num;
         this.nodeName = name;
+        this.depth = depth;
         this.Parents = new ArrayList<Node>();
         this.Children = new ArrayList<Node>();
         this.visit = false;
-        
+        this.aPoint = null;
     }
     
     /**
@@ -119,5 +127,34 @@ public class Node extends Object
     {
         return this.visit;
     }
+    
+    /**
+     * このノードのx座標を返す
+     */
+    public double getNodeX()
+    {
+        return aPoint.getX();
+    }
+    
+    /**
+     * このノードのy座標を返す
+     */
+    public double getNodeY()
+    {
+        return aPoint.getY();
+    }
+    
+    
+    /**
+     * このノードの座標をセットする
+     */
+    public void setNodeLocation(int x, int y)
+    {
+        aPoint.setLocation(x,y);
+    }
+    
+    
+    
+    
     
 }
