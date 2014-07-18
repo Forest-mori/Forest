@@ -34,14 +34,22 @@ public class ForestView extends mvc.View
     {
         super.paintComponent(aGraphics);
         ForestModel aModel = (ForestModel)model;
-        if(aModel == null)
+        Forest aForest = aModel.getForest();
+        if(aForest == null)
         {
-            System.out.println("モデルが内包されていません");
+            System.out.println("フォレストデータがありません");
         }
-        int width = this.getWidth();
-		int height = this.getHeight();
-        aGraphics.setColor(Color.gray);
-        
+        else
+        {
+            
+            if(aModel == null)
+            {
+                System.out.println("モデルが内包されていません");
+            }
+            int width = this.getWidth();
+            int height = this.getHeight();
+            aGraphics.setColor(Color.gray);
+        }
         return;
     }
     
