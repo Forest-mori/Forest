@@ -15,7 +15,7 @@ import java.awt.Dimension;
 public class ForestView extends mvc.View
 {
     
-    /*
+    /**
      * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。
      */
     private JPanel p;

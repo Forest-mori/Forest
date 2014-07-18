@@ -12,15 +12,23 @@ import javax.swing.JLabel;
 
 
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import javax.swing.JFrame;
 
 
 
 public class ForestModel extends mvc.Model
 {
-    /*
+    /**
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
+<<<<<<< HEAD
     /*
      *
      */
@@ -32,14 +40,29 @@ public class ForestModel extends mvc.Model
 
     
     /*
+=======
+  
+    /**
+     * ForestViewを束縛する
+     */
+    private ForestView aView;
+    
+    /**
+>>>>>>> FETCH_HEAD
      * コンストラクタ
      */
     public ForestModel(){
         super();
+<<<<<<< HEAD
         aWindow = null;
         aForest = null;
         aView  = null;
         this.aForest = new Forest();
+=======
+        
+        aForest = new Forest(this);
+        aView = new ForestView(this,new ForestController());
+>>>>>>> FETCH_HEAD
         this.aForest.read(this.Filechooser());
         aView = new ForestView(this,new ForestController());
         open();
@@ -52,7 +75,7 @@ public class ForestModel extends mvc.Model
         aWindow.setVisible(true);
     }
     
-    /*
+    /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
     public void actionPerformed(ActionEvent anActionEvent)
@@ -67,7 +90,13 @@ public class ForestModel extends mvc.Model
 	{
         aWindow = new JFrame("test");
     }
+<<<<<<< HEAD
     /*
+=======
+    
+    
+    /**
+>>>>>>> FETCH_HEAD
      * ファイルを選んでくるメソッド
      */
     public File Filechooser()
@@ -78,6 +107,7 @@ public class ForestModel extends mvc.Model
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
+<<<<<<< HEAD
     public void open()
     {
         aWindow = new JFrame("test");
@@ -89,6 +119,9 @@ public class ForestModel extends mvc.Model
         aWindow.setVisible(true);
         return;
     }
+=======
+   
+>>>>>>> FETCH_HEAD
     
     
 }
