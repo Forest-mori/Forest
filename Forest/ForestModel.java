@@ -28,53 +28,41 @@ public class ForestModel extends mvc.Model
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-<<<<<<< HEAD
-    /*
-     *
+
+    /**
+     * JFrameを束縛する
      */
     public JFrame aWindow;
+    
     /*
      * ForestView を内包する
      */
     protected ForestView aView;
 
     
-    /*
-=======
-  
     /**
      * ForestViewを束縛する
      */
     private ForestView aView;
     
     /**
->>>>>>> FETCH_HEAD
      * コンストラクタ
      */
     public ForestModel(){
         super();
-<<<<<<< HEAD
+
         aWindow = null;
         aForest = null;
         aView  = null;
-        this.aForest = new Forest();
-=======
-        
+   
         aForest = new Forest(this);
         aView = new ForestView(this,new ForestController());
->>>>>>> FETCH_HEAD
         this.aForest.read(this.Filechooser());
-        aView = new ForestView(this,new ForestController());
-        open();
+        this.open();
         test();
     }
-    public void test()
-    {
-        JLabel label = new JLabel("SwingLabel");
-        aView.setLabel(label);
-        aWindow.setVisible(true);
-    }
     
+
     /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
@@ -88,15 +76,10 @@ public class ForestModel extends mvc.Model
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-        aWindow = new JFrame("test");
+
     }
-<<<<<<< HEAD
-    /*
-=======
-    
     
     /**
->>>>>>> FETCH_HEAD
      * ファイルを選んでくるメソッド
      */
     public File Filechooser()
@@ -107,7 +90,10 @@ public class ForestModel extends mvc.Model
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
-<<<<<<< HEAD
+    
+    /**
+     * ウィンドウを表示させる
+     */
     public void open()
     {
         aWindow = new JFrame("test");
@@ -119,9 +105,13 @@ public class ForestModel extends mvc.Model
         aWindow.setVisible(true);
         return;
     }
-=======
-   
->>>>>>> FETCH_HEAD
     
-    
+    /**
+     * Forestのインスタンスのゲッター
+     */
+    public Forest getForest()
+    {
+        return this.aForest;
+    }
+
 }
