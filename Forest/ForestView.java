@@ -41,6 +41,7 @@ public class ForestView extends mvc.View
         }
         else
         {
+            System.out.println("フォレストデータを確認");
             
             if(aModel == null)
             {

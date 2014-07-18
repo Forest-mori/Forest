@@ -38,12 +38,6 @@ public class ForestModel extends mvc.Model
      * ForestView を内包する
      */
     protected ForestView aView;
-
-    
-    /**
-     * ForestViewを束縛する
-     */
-    private ForestView aView;
     
     /**
      * コンストラクタ
@@ -59,7 +53,6 @@ public class ForestModel extends mvc.Model
         aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
         this.open();
-        test();
     }
     
 
