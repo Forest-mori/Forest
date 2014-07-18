@@ -10,6 +10,7 @@ import java.awt.Dimension;
 
 import javax.swing.JLabel;
 
+import java.util.TreeMap;
 
 
 import java.awt.Color;
@@ -45,14 +46,22 @@ public class ForestModel extends mvc.Model
     public ForestModel(){
         super();
 
-        aWindow = null;
-        aForest = null;
-        aView  = null;
+        this.aWindow = null;
+      //  aForest = null;
+        //aView  = null;
    
-        aForest = new Forest(this);
-        aView = new ForestView(this,new ForestController());
+        this.aForest = new Forest(this);
+        this.aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
         this.open();
+        for (Node aNode : this.aForest.getNode().values())
+        {
+            System.out.println(aNode.getNumber() + "番：名前＝" + aNode.getName());
+        }
+
+        for(Node aNode : this.aForest.getRoot()){
+            this.aForest.visit(aNode);
+        }
     }
     
 
@@ -106,5 +115,6 @@ public class ForestModel extends mvc.Model
     {
         return this.aForest;
     }
-
+    
+   
 }

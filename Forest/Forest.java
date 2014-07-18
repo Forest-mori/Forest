@@ -87,13 +87,13 @@ public class Forest extends Object
                     {
                         if(depth[k].equals("|"))
                         {
-                           
+                            
                             depthcount = depthcount + 1;
                         }
                         else
                         {
                             nodeName = depth[k];
-                        
+                            
                         }
                     }
                     
@@ -133,7 +133,9 @@ public class Forest extends Object
             String[] node = data.split(", ");
             Node aNode = new Node(Integer.parseInt(node[0]),node[1],this.depths.get(node[1]));
             this.nodes.put(Integer.parseInt(node[0]),aNode);
-            
+            if(this.depths.get(node[1]) == 0){
+                this.roots.add(aNode);
+            }
             System.out.println("名前＝" + node[1] + "深さ＝" + aNode.getDepth());
         }
         else if(this.textType == 2)
@@ -154,9 +156,9 @@ public class Forest extends Object
     /**
      * 探索処理をして、モデルに通知して画面を更新する
      */
-    public void visit()
+    public void visit(Node aNode)
     {
-        
+       
     }
     
     /**
