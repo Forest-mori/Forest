@@ -10,7 +10,7 @@ public class ForestController extends mvc.Controller
      * フォレストコントローラーのコンストラクタ
      */
     public ForestController(){
-        
+        super();
     }
     
     /**
