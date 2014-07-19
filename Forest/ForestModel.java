@@ -53,7 +53,6 @@ public class ForestModel extends mvc.Model
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
-        this.open();
         int y = 1;
         for (Node aNode : this.aForest.getNode().values())
         {
@@ -77,6 +76,17 @@ public class ForestModel extends mvc.Model
                 System.out.println("失敗");
             
         }
+        y  = 1;
+        Point savePoint = null;
+        for(Node aNode : this.aForest.getNode().values())
+        {
+            int Xpoint = aNode.getDepth()*200;
+            int Ypoint = y*16;
+            aNode.initLocation(Xpoint,Ypoint);
+            y++;
+        }
+        this.open();
+
         
         
         
@@ -116,11 +126,17 @@ public class ForestModel extends mvc.Model
      */
     public void open()
     {
+        int i = 0;
+        for (Node aNode : this.aForest.getNode().values())
+        {
+            if(aNode.getVisit() == true)
+                i++;
+        }
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
-        aWindow.setMinimumSize(new Dimension(400, 300));
+        aWindow.setMinimumSize(new Dimension(800,400));
         aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        aWindow.setSize(800, 600);
+        aWindow.setSize(800,400);
         aWindow.setLocation(200,100);
         aWindow.setVisible(true);
         return;
