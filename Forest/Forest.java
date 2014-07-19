@@ -162,22 +162,21 @@ public class Forest extends Object
     /**
      * 探索処理をして、モデルに通知して画面を更新する
      */
-    public void visit(Node aNode)
+    public void visit(Node aNode, Point aPoint)
     {
        if(aNode.getVisit() == false)
        {
-           aNode.setVisit();
+           aNode.setNodeLocation(aPoint.x,aPoint.y);
        }
         this.aModel.changed();
+        
+        int nodey = aPoint.y + 5;
         
         for(Node child : aNode.getChildren())
         {
             
-            this.visit(child);
-            
-            
-            
-            
+            this.visit(child,new Point(child.getDepth()*10,nodey));
+            child.setVisit();
         }
         
         

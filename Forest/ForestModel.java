@@ -62,15 +62,16 @@ public class ForestModel extends mvc.Model
             y += 2;
         }
         
+        Point aPoint = new Point(0,1);
         for(Node aNode : this.aForest.getRoot()){
-            this.aForest.visit(aNode);
+            this.aForest.visit(aNode,aPoint);
         }
         
         
         for (Node aNode : this.aForest.getNode().values())
         {
             
-            if(aNode.getVisit())
+            if(aNode.getVisit() == true)
                 System.out.println("番号：" + aNode.getNumber() + "   名前：" + aNode.getName() + "探索済");
             else
                 System.out.println("失敗");
