@@ -129,28 +129,28 @@ public class Node extends Object
     }
     
     /**
-     * このノードのx座標を返す
+     * このノードの座標を返す
      */
-    public double getNodeX()
+    public Point getNodeLocation()
     {
-        return aPoint.getX();
+        return this.aPoint;
     }
     
     /**
-     * このノードのy座標を返す
+     * ノードの座標の初期設定をする
      */
-    public double getNodeY()
+    public void initLocation(int x,int y)
     {
-        return aPoint.getY();
+        this.aPoint = new Point(x,y);
     }
     
     
     /**
-     * このノードの座標をセットする
+     * このノードの座標を変更する
      */
     public void setNodeLocation(int x, int y)
     {
-        aPoint.setLocation(x,y);
+        this.aPoint.setLocation(x,y);
     }
     
     

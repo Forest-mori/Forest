@@ -29,7 +29,7 @@ public class ForestModel extends mvc.Model
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-
+    
     /**
      * JFrameを束縛する
      */
@@ -45,26 +45,43 @@ public class ForestModel extends mvc.Model
      */
     public ForestModel(){
         super();
-
+        
         this.aWindow = null;
-      //  aForest = null;
+        //  aForest = null;
         //aView  = null;
-   
+        
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
         this.open();
+        int y = 1;
         for (Node aNode : this.aForest.getNode().values())
         {
-            System.out.println(aNode.getNumber() + "番：名前＝" + aNode.getName());
+            aNode.initLocation(0,y);
+            System.out.println("名前：" + aNode.getName() + "ポイント:" + aNode.getNodeLocation());
+            y += 2;
         }
-
+        
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode);
         }
+        
+        
+        for (Node aNode : this.aForest.getNode().values())
+        {
+            
+            if(aNode.getVisit())
+                System.out.println("番号：" + aNode.getNumber() + "   名前：" + aNode.getName() + "探索済");
+            else
+                System.out.println("失敗");
+            
+        }
+        
+        
+        
     }
     
-
+    
     /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
@@ -78,7 +95,7 @@ public class ForestModel extends mvc.Model
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-
+        
     }
     
     /**
@@ -116,5 +133,5 @@ public class ForestModel extends mvc.Model
         return this.aForest;
     }
     
-   
+    
 }

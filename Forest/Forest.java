@@ -39,6 +39,11 @@ public class Forest extends Object
      */
     private int textType;
     
+    /**
+     * 画面更新用にForestModelを束縛する
+     */
+    private ForestModel aModel;
+    
     
     /**
      * フォレストのコンストラクタ
@@ -50,6 +55,7 @@ public class Forest extends Object
         this.roots = new ArrayList<Node>();
         this.depths = new HashMap<String,Integer>();
         this.textType = 5;
+        this.aModel = aModel;
         
     }
     
@@ -158,7 +164,23 @@ public class Forest extends Object
      */
     public void visit(Node aNode)
     {
-       
+       if(aNode.getVisit() == false)
+       {
+           aNode.setVisit();
+       }
+        this.aModel.changed();
+        
+        for(Node child : aNode.getChildren())
+        {
+            
+            this.visit(child);
+            
+            
+            
+            
+        }
+        
+        
     }
     
     /**
