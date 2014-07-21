@@ -73,7 +73,7 @@ public class ForestView extends mvc.View
                 for(Node aTest : aNode.values())
                 {
                     //System.out.println("----名前：" + aTest.getName() + "["+i+"]番目----");
-                    System.out.println("名前["+aTest.getName()+"]の位置座標:"+aTest.getNodeLocation());
+                   // System.out.println("名前["+aTest.getName()+"]の位置座標:"+aTest.getNodeLocation());
                     widthes = fm.stringWidth(aTest.getName());
                     
                     //System.out.println("今回の文字のサイズ["+widthes+"]");

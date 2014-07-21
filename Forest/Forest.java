@@ -46,6 +46,11 @@ public class Forest extends Object
     
     
     /**
+     * 一番のy座標を持つ変数
+     */
+    public static int underY;
+    
+    /**
      * フォレストのコンストラクタ
      */
     public Forest(ForestModel aModel)
@@ -164,20 +169,42 @@ public class Forest extends Object
      */
     public void visit(Node aNode, Point aPoint)
     {
-       if(aNode.getVisit() == false)
-       {
-           aNode.setNodeLocation(aPoint.x,aPoint.y);
-       }
+        if(aNode.getVisit() == false)
+        {
+            aNode.setNodeLocation(aPoint.x,aPoint.y);
+        }
+        
+        try
+        {
+            Thread.sleep(100);
+        }
+        catch (InterruptedException anException)
+        {
+            throw new RuntimeException(anException.toString());
+        }
+        
+        
+        
+        
         this.aModel.changed();
         
-        int nodey = aPoint.y + 5;
-        
+        int nodey = aPoint.y + 25;
+        //  int childcount = 0;
         for(Node child : aNode.getChildren())
         {
-            
-            this.visit(child,new Point(child.getDepth()*10,nodey));
+            while(nodey < underY){
+                nodey += 20;
+            }
+            this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
             child.setVisit();
+            //childcount++;
+            
         }
+        if(nodey > this.underY)
+            this.underY = nodey;
+        System.out.println(underY);
+        if(aNode.getVisit() == false)
+            aNode.setNodeLocation(aPoint.x,(underY/2 + aPoint.y));
         
         
     }

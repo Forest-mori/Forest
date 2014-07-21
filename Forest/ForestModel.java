@@ -53,29 +53,30 @@ public class ForestModel extends mvc.Model
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
+        this.open();
+
         int y = 1;
         for (Node aNode : this.aForest.getNode().values())
         {
             aNode.initLocation(0,y);
-            System.out.println("名前：" + aNode.getName() + "ポイント:" + aNode.getNodeLocation());
-            y += 2;
+            System.out.println("番号：" + aNode.getNumber() + "　　　名前：" + aNode.getName());
+            y += 25;
         }
         
-        Point aPoint = new Point(0,1);
         for(Node aNode : this.aForest.getRoot()){
-            this.aForest.visit(aNode,aPoint);
+            this.aForest.visit(aNode,new Point(0,this.aForest.underY));
+            System.out.println(this.aForest.underY);
         }
         
         
-        for (Node aNode : this.aForest.getNode().values())
-        {
-            
-            if(aNode.getVisit() == true)
-                System.out.println("番号：" + aNode.getNumber() + "   名前：" + aNode.getName() + "探索済");
-            else
-                System.out.println("失敗");
-            
-        }
+        
+        
+        
+       
+        
+        
+        
+        
         y  = 1;
         Point savePoint = null;
         for(Node aNode : this.aForest.getNode().values())
@@ -85,8 +86,7 @@ public class ForestModel extends mvc.Model
             aNode.initLocation(Xpoint,Ypoint);
             y++;
         }
-        this.open();
-
+        
         
         
         
@@ -134,7 +134,7 @@ public class ForestModel extends mvc.Model
         }
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
-        aWindow.setMinimumSize(new Dimension(800,400));
+        aWindow.setMinimumSize(new Dimension(800,1000));
         aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aWindow.setSize(800,400);
         aWindow.setLocation(200,100);
