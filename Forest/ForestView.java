@@ -69,7 +69,8 @@ public class ForestView extends mvc.View
                 int widthes = 0;
                 Point aPoint = null;
                 FontMetrics fm = aGraphics.getFontMetrics();
-                
+                int barScore = -aModel.getBar() * 50;
+
                 for(Node aTest : aNode.values())
                 {
                     //System.out.println("----名前：" + aTest.getName() + "["+i+"]番目----");
@@ -80,8 +81,8 @@ public class ForestView extends mvc.View
                     //ノードのサークルを作成する。(文字入り)
                     aPoint = aTest.getNodeLocation();
                     aGraphics.setColor(Color.white);
-                    aGraphics.drawRect(aPoint.x,aPoint.y,widthes+2,16);
-                    aGraphics.drawString(aTest.getName(),aPoint.x+2,aPoint.y+13);
+                    aGraphics.drawRect(aPoint.x,aPoint.y+barScore ,widthes+2,16);
+                    aGraphics.drawString(aTest.getName() ,aPoint.x+2,aPoint.y+13+barScore);
                     
                     i++;
                 }
@@ -90,7 +91,7 @@ public class ForestView extends mvc.View
                     widthes = fm.stringWidth(aTest.getParent().getName());
                     Point parent = aTest.getParent().getNodeLocation();
                     Point child = aTest.getChild().getNodeLocation();
-                    aGraphics.drawLine(parent.x+widthes+2,parent.y+8,child.x,child.y);
+                    aGraphics.drawLine(parent.x+widthes+2,parent.y+8+barScore,child.x,child.y+8+barScore);
                 }
             }
 

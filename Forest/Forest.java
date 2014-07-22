@@ -169,6 +169,7 @@ public class Forest extends Object
      */
     public void visit(Node aNode, Point aPoint)
     {
+        //探索してない場合座標を設定する。
         if(aNode.getVisit() == false)
         {
             aNode.setNodeLocation(aPoint.x,aPoint.y);
@@ -182,14 +183,12 @@ public class Forest extends Object
         {
             throw new RuntimeException(anException.toString());
         }
-        
-        
-        
-        
+        //全部の子供のないノードの数を数える。
+        int childcount = 0;
+
         this.aModel.changed();
         
         int nodey = aPoint.y + 16;
-        //  int childcount = 0;
         for(Node child : aNode.getChildren())
         {
             while(nodey < underY){
@@ -197,7 +196,7 @@ public class Forest extends Object
             }
             this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
             child.setVisit();
-            //childcount++;
+            childcount++;
             
         }
         if(nodey > this.underY)

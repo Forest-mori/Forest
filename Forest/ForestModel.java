@@ -21,9 +21,13 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import java.awt.Toolkit;
+import javax.swing.JScrollBar;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+import java.awt.BorderLayout;
 
 
-public class ForestModel extends mvc.Model
+public class ForestModel extends mvc.Model implements AdjustmentListener
 {
     /**
      *Forestクラスのインスタンスを束縛する変数
@@ -39,6 +43,14 @@ public class ForestModel extends mvc.Model
      * ForestView を内包する
      */
     protected ForestView aView;
+    /*
+     *
+     */
+    public int saveHeigth = 0;
+    
+    public JScrollBar bar;
+    
+    private int barScore;
     
     /**
      * コンストラクタ
@@ -64,7 +76,7 @@ public class ForestModel extends mvc.Model
         }
         
         for(Node aNode : this.aForest.getRoot()){
-            this.aForest.visit(aNode,new Point(0,this.aForest.underY));
+            this.aForest.visit(aNode,new Point(50,this.aForest.underY));
             System.out.println(this.aForest.underY);
         }
         
@@ -110,22 +122,21 @@ public class ForestModel extends mvc.Model
             if(aNode.getVisit() == true)
                 i++;
         }
-        /*
-        
-        JScrollBar bar = new JScrollBar(JScrollBar.HORIZONTAL, 100, 20, 0, 1000);
-        bar.setPreferredSize(new Dimension(280, 20));
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+
+        bar = new JScrollBar(JScrollBar.VERTICAL);
         bar.addAdjustmentListener(this);
         aView.add(bar);
-         */
 
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        aWindow.getContentPane().add(bar , BorderLayout.EAST);
         aWindow.setMinimumSize(d);
         aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aWindow.setSize(800,400);
         aWindow.setLocation(0,0);
         aWindow.setVisible(true);
+        saveHeigth = d.height;
         return;
     }
     
@@ -136,4 +147,20 @@ public class ForestModel extends mvc.Model
     {
         return this.aForest;
     }
+    public void adjustmentValueChanged(AdjustmentEvent e)
+    {
+        System.out.println("バーの情報["+bar.getValue()+"]");
+        barScore = bar.getValue();
+        changed();
+        return;
+	}
+    
+    public int getBar()
+    {
+        return barScore;
+    }
+    
+    
+    
+    
 }
