@@ -76,18 +76,7 @@ public class ForestModel extends mvc.Model
         
         
         
-        
-        y  = 1;
-        Point savePoint = null;
-        for(Node aNode : this.aForest.getNode().values())
-        {
-            int Xpoint = aNode.getDepth()*200;
-            int Ypoint = y*16;
-            aNode.initLocation(Xpoint,Ypoint);
-            y++;
-        }
-        
-        
+  
         
         
     }

@@ -4,6 +4,7 @@ import javax.swing.JLabel;
 import java.util.ArrayList;
 import java.awt.Point;
 
+
 public class Node extends Object
 {
     /**
@@ -158,3 +159,4 @@ public class Node extends Object
     
     
 }
+

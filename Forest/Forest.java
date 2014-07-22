@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.Map;
+import java.util.Comparator;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -188,12 +189,12 @@ public class Forest extends Object
         
         this.aModel.changed();
         
-        int nodey = aPoint.y + 25;
+        int nodey = aPoint.y + 16;
         //  int childcount = 0;
         for(Node child : aNode.getChildren())
         {
             while(nodey < underY){
-                nodey += 20;
+                nodey += 16;
             }
             this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
             child.setVisit();
@@ -236,3 +237,5 @@ public class Forest extends Object
     
     
 }
+
+
