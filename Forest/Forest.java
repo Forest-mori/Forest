@@ -194,6 +194,7 @@ public class Forest extends Object
 		for(Node child : aNode.getChildren())
 		{
 			while(nodey <= underY){
+                //16はラベルの縦の長さ
 				nodey += 16;
 			}
 			this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
@@ -204,7 +205,7 @@ public class Forest extends Object
 		if(nodey > this.underY)
 			this.underY = nodey;
 		if(aNode.getVisit() == false)
-			aNode.setNodeLocation(aPoint.x,(underY/2 + aPoint.y));
+			aNode.setNodeLocation(aPoint.x,(nodey+aPoint.y+16) / 2);
 
 
 	}
