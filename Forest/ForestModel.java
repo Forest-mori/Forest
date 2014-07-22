@@ -29,27 +29,28 @@ public class ForestModel extends mvc.Model
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-    
+
     /**
      * JFrameを束縛する
      */
     public JFrame aWindow;
-    
+
     /*
      * ForestView を内包する
      */
     protected ForestView aView;
-    
+
     /**
      * コンストラクタ
      */
-    public ForestModel(){
+    public ForestModel()
+    {
         super();
-        
+
         this.aWindow = null;
         //  aForest = null;
         //aView  = null;
-        
+
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController());
         this.aForest.read(this.Filechooser());
@@ -62,11 +63,12 @@ public class ForestModel extends mvc.Model
             System.out.println("番号：" + aNode.getNumber() + "　　　名前：" + aNode.getName());
             y += 25;
         }
-        
+
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
             System.out.println(this.aForest.underY);
         }
+<<<<<<< HEAD
         
         
         
@@ -79,25 +81,27 @@ public class ForestModel extends mvc.Model
   
         
         
+=======
+>>>>>>> FETCH_HEAD
     }
-    
-    
+
+
     /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
     public void actionPerformed(ActionEvent anActionEvent)
     {
-        
+
     }
-    
+
     /**
 	 * メニューをポップアップする。
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-        
+
     }
-    
+
     /**
      * ファイルを選んでくるメソッド
      */
@@ -109,7 +113,7 @@ public class ForestModel extends mvc.Model
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
-    
+
     /**
      * ウィンドウを表示させる
      */
@@ -130,7 +134,7 @@ public class ForestModel extends mvc.Model
         aWindow.setVisible(true);
         return;
     }
-    
+
     /**
      * Forestのインスタンスのゲッター
      */
@@ -138,6 +142,6 @@ public class ForestModel extends mvc.Model
     {
         return this.aForest;
     }
-    
-    
+
+
 }
