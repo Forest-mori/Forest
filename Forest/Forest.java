@@ -188,7 +188,7 @@ public class Forest extends Object
         
         this.aModel.changed();
         
-        int nodey = aPoint.y + 25;
+        int nodey = aPoint.y + 16;
         //  int childcount = 0;
         for(Node child : aNode.getChildren())
         {

@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-
+import java.awt.Toolkit;
 
 
 public class ForestModel extends mvc.Model
@@ -60,13 +60,14 @@ public class ForestModel extends mvc.Model
         {
             aNode.initLocation(0,y);
             System.out.println("番号：" + aNode.getNumber() + "　　　名前：" + aNode.getName());
-            y += 25;
+            //y += 25;
         }
         
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
             System.out.println(this.aForest.underY);
         }
+        
     }
     
     
@@ -109,12 +110,21 @@ public class ForestModel extends mvc.Model
             if(aNode.getVisit() == true)
                 i++;
         }
+        /*
+        
+        JScrollBar bar = new JScrollBar(JScrollBar.HORIZONTAL, 100, 20, 0, 1000);
+        bar.setPreferredSize(new Dimension(280, 20));
+        bar.addAdjustmentListener(this);
+        aView.add(bar);
+         */
+
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
-        aWindow.setMinimumSize(new Dimension(800,1000));
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        aWindow.setMinimumSize(d);
         aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aWindow.setSize(800,400);
-        aWindow.setLocation(200,100);
+        aWindow.setLocation(0,0);
         aWindow.setVisible(true);
         return;
     }
@@ -126,6 +136,4 @@ public class ForestModel extends mvc.Model
     {
         return this.aForest;
     }
-    
-    
 }
