@@ -189,21 +189,20 @@ public class Forest extends Object
         
         this.aModel.changed();
         
-        int nodey = aPoint.y + 16;
-        //  int childcount = 0;
+        int nodey = aPoint.y;
+        int childcount = 0;
         for(Node child : aNode.getChildren())
         {
-            while(nodey < underY){
+            while(nodey <= underY){
                 nodey += 16;
             }
             this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
             child.setVisit();
-            //childcount++;
+            childcount++;
             
         }
         if(nodey > this.underY)
             this.underY = nodey;
-        System.out.println(underY);
         if(aNode.getVisit() == false)
             aNode.setNodeLocation(aPoint.x,(underY/2 + aPoint.y));
         

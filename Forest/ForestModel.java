@@ -68,21 +68,7 @@ public class ForestModel extends mvc.Model
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
             System.out.println(this.aForest.underY);
         }
-<<<<<<< HEAD
-        
-        
-        
-        
-        
-       
-        
-        
-        
-  
-        
-        
-=======
->>>>>>> FETCH_HEAD
+
     }
 
 
