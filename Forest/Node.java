@@ -114,7 +114,6 @@ public class Node extends Object
 	public void setChild(Node aNode)
 	{
 		this.Children.add(aNode);
-        Collections.sort(this.Children, new Comparator()); //辞書順にソート
 	}
 
 	/**
@@ -165,13 +164,5 @@ public class Node extends Object
 }
 
 
-/*
-class NodeComparator implements java.util.Comparator {
-	public int compare(Object node1, Object node2) {
-		//               + (x > y)
-		// compare node1 node2 = 0 (x = y)
-		//               - (x < y)
-        return ((Node) node1).getName().compareTo(((Node) node2).getName());
-	}
-}
-*/
+
+

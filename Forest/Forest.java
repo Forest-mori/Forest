@@ -15,14 +15,9 @@ import java.util.TreeMap;
 public class Forest extends Object
 {
 
-    /**
-     * 一時的にノードと番号を一緒に束縛する
-     */
-    private TreeMap<Integer,Node> temp;
-    
     
 	/**
-	 * 辞書順に並べたノードを番号と一緒に束縛する
+	 * ノードを番号と一緒に束縛する
 	 */
 	private TreeMap<Integer,Node> nodes;
 
@@ -63,8 +58,7 @@ public class Forest extends Object
 	 */
 	public Forest(ForestModel aModel)
 	{
-        this.temp = new TreeMap<Integer,Node>();
-		this.nodes = new TreeMap<Integer,Node>();
+    this.nodes = new TreeMap<Integer,Node>();
 		this.branches = new ArrayList<Branch>();
 		this.roots = new ArrayList<Node>();
 		this.depths = new HashMap<String,Integer>();
@@ -227,14 +221,7 @@ public class Forest extends Object
 	}
     
     
-    /**
-	 * ノードのゲッター
-	 */
-	public TreeMap<Integer,Node> getTemp()
-	{
-		return this.temp;
-	}
-
+    
 	/**
 	 * ルートノードのゲッター
 	 */
