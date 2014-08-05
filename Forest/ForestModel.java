@@ -52,6 +52,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
     private int barScore;
 
+    /**
+     * 整列を止めるか止めないかを決める変数
+     */
     public boolean flag;
 
     /**
@@ -172,6 +175,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         return barScore;
     }
 
+    /**
+     * フラグのゲッター
+     */
     public boolean getFlag()
     {
         return this.flag;

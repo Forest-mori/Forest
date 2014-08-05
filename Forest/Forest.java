@@ -179,7 +179,7 @@ public class Forest extends Object
             if(aModel.getFlag() == true){
                 flag = true;
             }
-            else
+        
                 System.out.println("false");
 
         }
