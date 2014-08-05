@@ -6,11 +6,19 @@ import java.awt.event.ActionListener;
 
 public class ForestController extends mvc.Controller
 {
+    /**
+	 * ポップアップメニューが表示中（処理中）であるかを表すフィールド。
+	 */
+	private boolean isMenuPopuping;
+    
+    private ForestModel model;
+    
 	/**
 	 * フォレストコントローラーのコンストラクタ
 	 */
-	public ForestController(){
+	public ForestController(ForestModel aModel){
 		super();
+        this.model = aModel;
 	}
 
 	/**
@@ -24,9 +32,26 @@ public class ForestController extends mvc.Controller
 	/**
 	 * メニューをポップアップする。
 	 */
-	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
+	public void showPopupMenu(MouseEvent aMouseEvent)
 	{
-
+        isMenuPopuping = true;
+		this.model.showPopupMenu(aMouseEvent, this);
+		return;
+	}
+    
+    
+    /**
+	 * マウスボタンが押されたときの処理をする。
+	 */
+	public void mousePressed(MouseEvent aMouseEvent) {
+		
+        if(aMouseEvent.getButton() == 3){
+            showPopupMenu(aMouseEvent);
+            System.out.println("aaaa");
+        }
+        
+        
+		return;
 	}
 
 

@@ -52,6 +52,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
     
     private int barScore;
     
+    public boolean flag;
+    
+    
     /**
      * コンストラクタ
      */
@@ -59,9 +62,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         super();
         
         this.aWindow = null;
-        
+        this.flag = false;
         this.aForest = new Forest(this);
-        this.aView = new ForestView(this,new ForestController());
+        this.aView = new ForestView(this,new ForestController(this));
         this.aForest.read(this.Filechooser());
         this.open();
         
@@ -69,7 +72,6 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         for (Node aNode : this.aForest.getNode().values())
         {
             aNode.initLocation(0,y);
-            System.out.println("番号：" + aNode.getNumber() + "　　　名前：" + aNode.getName());
             y += 16;
         }
         
@@ -93,8 +95,12 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-
-    }
+        if(this.flag == true)
+            this.flag = false;
+        else
+            this.flag = true;
+        
+        }
     
     /**
      * ファイルを選んでくるメソッド
@@ -162,8 +168,10 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         return barScore;
     }
     
-    
-    
+    public boolean getFlag()
+    {
+        return this.flag;
+    }
     
 
 

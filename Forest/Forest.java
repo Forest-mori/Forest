@@ -150,7 +150,7 @@ public class Forest extends Object
 			if(this.depths.get(node[1]) == 0){
 				this.roots.add(aNode);
 			}
-			System.out.println("名前＝" + node[1] + "深さ＝" + aNode.getDepth());
+			//System.out.println("名前＝" + node[1] + "深さ＝" + aNode.getDepth());
 		}
 		else if(this.textType == 2)
 		{
@@ -172,6 +172,22 @@ public class Forest extends Object
 	 */
 	public void visit(Node aNode, Point aPoint)
 	{
+        boolean flag = aModel.getFlag();
+        //System.out.println(flag);
+        while(flag)
+        {
+            flag = aModel.getFlag();
+            /*if(aModel.getFlag() == true)
+                break;*/
+            if(aModel.getFlag() == true){
+                System.out.println("true");
+                flag = true;
+            }
+            else
+                System.out.println("false");
+
+        }
+            
 		if(aNode.getVisit() == false)
 		{
 			aNode.setNodeLocation(aPoint.x,aPoint.y);
@@ -179,15 +195,12 @@ public class Forest extends Object
 
 		try
 		{
-			Thread.sleep(100);
+                Thread.sleep(100);
 		}
 		catch (InterruptedException anException)
 		{
 			throw new RuntimeException(anException.toString());
 		}
-
-
-
 
 		this.aModel.changed();
 
