@@ -33,12 +33,12 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-    
+
     /**
      * JFrameを束縛する
      */
     public JFrame aWindow;
-    
+
     /*
      * ForestView を内包する
      */
@@ -47,49 +47,53 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      *
      */
     public int saveHeigth = 0;
-    
+
     public JScrollBar bar;
-    
+
     private int barScore;
-    
+
     public boolean flag;
-    
-    
+
+    /**
+     * File chooserの初期パス指定
+     */
+    public String aFileChooserDirectory = "./texts";
+
     /**
      * コンストラクタ
      */
     public ForestModel(){
         super();
-        
+
         this.aWindow = null;
         this.flag = false;
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController(this));
-        this.aForest.read(this.Filechooser());
+        this.aForest.read(this.Filechooser(aFileChooserDirectory));
         this.open();
-        
+
         int y = 1;
         for (Node aNode : this.aForest.getNode().values())
         {
             aNode.initLocation(0,y);
             y += 16;
         }
-        
+
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
         }
-        
+
     }
-    
-    
+
+
     /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
     public void actionPerformed(ActionEvent anActionEvent)
     {
-        
+
     }
-    
+
 	/**
 	 * メニューをポップアップする。
 	 */
@@ -99,21 +103,21 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
             this.flag = false;
         else
             this.flag = true;
-        
+
         }
-    
+
     /**
      * ファイルを選んでくるメソッド
      */
-    public File Filechooser()
+    public File Filechooser(String aFileChooserDirectory)
     {
-        JFileChooser ch = new JFileChooser();
+        JFileChooser ch = new JFileChooser(aFileChooserDirectory);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Text File", "txt");
         ch.setFileFilter(filter);
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
-    
+
     /**
      * ウィンドウを表示させる
      */
@@ -142,7 +146,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         saveHeigth = d.height;
         return;
     }
-    
+
     /**
      * Forestのインスタンスのゲッター
      */
@@ -167,12 +171,12 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
     {
         return barScore;
     }
-    
+
     public boolean getFlag()
     {
         return this.flag;
     }
-    
+
 
 
 }
