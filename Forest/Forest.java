@@ -173,14 +173,10 @@ public class Forest extends Object
 	public void visit(Node aNode, Point aPoint)
 	{
         boolean flag = aModel.getFlag();
-        //System.out.println(flag);
         while(flag)
         {
             flag = aModel.getFlag();
-            /*if(aModel.getFlag() == true)
-                break;*/
             if(aModel.getFlag() == true){
-                System.out.println("true");
                 flag = true;
             }
             else
