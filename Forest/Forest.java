@@ -217,6 +217,10 @@ public class Forest extends Object
 			this.underY = nodey;
 		if(aNode.getVisit() == false)
 			aNode.setNodeLocation(aPoint.x,(nodey+aPoint.y+16) / 2);
+        if(aNode.getChildren().size() == 1){
+            Node child = aNode.getChildren().get(0);
+            aNode.setNodeLocation(aPoint.x,child.getNodeLocation().y);
+        }
 
 
 	}
