@@ -9,10 +9,11 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 
 import javax.swing.JLabel;
+import javax.swing.JPopupMenu;
 
 import java.util.TreeMap;
 
-
+import javax.swing.JMenuItem;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -96,7 +97,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     public void actionPerformed(ActionEvent anActionEvent)
     {
-
+        if(anActionEvent.getActionCommand().equals("Restart") ){
+            this.flag = false;
+        }
     }
 
 	/**
@@ -104,10 +107,28 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-        if(this.flag == true)
+       /* if(this.flag == true)
             this.flag = false;
         else
-            this.flag = true;
+            this.flag = true;*/
+        this.flag = true;
+        
+        if (aMouseEvent.isPopupTrigger())
+        {
+            JPopupMenu popup = new JPopupMenu();
+            
+            JMenuItem i1 = new JMenuItem("Restart");
+            i1.addActionListener(aController);
+            popup.add(i1);
+            
+            JMenuItem i2 = new JMenuItem("SawtoothWave");
+            i2.addActionListener(aController);
+            popup.add(i2);
+            
+            popup.show(aMouseEvent.getComponent(), aMouseEvent.getX(), aMouseEvent.getY());
+        }
+        
+
 
         }
 

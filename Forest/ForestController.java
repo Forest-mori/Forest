@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ForestController extends mvc.Controller
+public class ForestController extends mvc.Controller implements ActionListener 
 {
     /**
 	 * ポップアップメニューが表示中（処理中）であるかを表すフィールド。
