@@ -26,7 +26,8 @@ public class ForestController extends mvc.Controller
 	 */
 	public void actionPerformed(ActionEvent anActionEvent)
 	{
-
+        this.model.actionPerformed(anActionEvent);
+		return;
 	}
 
 	/**

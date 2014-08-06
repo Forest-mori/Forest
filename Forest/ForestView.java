@@ -42,7 +42,7 @@ public class ForestView extends mvc.View
 		Forest aForest = aModel.getForest();
 		if(aForest == null)
 		{
-			//System.out.println("フォレストデータがありません");
+			System.out.println("フォレストデータがありません");
 		}
 		else
 		{

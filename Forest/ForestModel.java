@@ -72,7 +72,10 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         this.flag = false;
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController(this));
-        this.aForest.read(this.Filechooser(aFileChooserDirectory));
+        File aFile = this.Filechooser(aFileChooserDirectory);
+        if(aFile == null)
+            return;
+        this.aForest.read(aFile);
         this.open();
 
         int y = 1;
@@ -85,7 +88,6 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
         }
-
     }
 
 
