@@ -248,9 +248,214 @@ th {
 </div>
 <hr>
 <h2>ソフトウェア工学IIの小テスト「樹状整列」マニュアル</h2>
-<div class="belt">
-<h3><a name="KanseiSaseteKudasai">完成させてください</a></h3>
-</div>
+
+<h3><a name="app">実行方法(実行ファイルの動かし方)</a></h3>
+<ol>
+    <li><a href="Forest.zip">Forest.zip</a>のアーカイブファイルを適当な場所に展開する。
+        <pre class="belt">
+            $ unzip Forest.zip
+            Archive:  Forest.zip
+            creating: Forest/Forest.app/
+            creating: Forest/Forest.app/Contents/
+            creating: Forest/Forest.app/Contents/MacOS/
+            creating: Forest/Forest.app/Contents/Resources/
+            creating: Forest/Forest.app/Contents/Resources/Scripts/
+            creating: Forest/Forest.app/Contents/Resources/description.rtfd/
+            creating: Forest/forest/
+            creating: Forest/texts/
+            inflating: Forest/Forest.app/Contents/Info.plist
+            inflating: Forest/Forest.app/Contents/MacOS/applet
+            inflating: Forest/Forest.app/Contents/PkgInfo
+            inflating: Forest/Forest.app/Contents/Resources/Scripts/main.scpt
+            inflating: Forest/Forest.app/Contents/Resources/applet.icns
+            inflating: Forest/Forest.app/Contents/Resources/applet.rsrc
+            inflating: Forest/Forest.app/Contents/Resources/description.rtfd/TXT.rtf
+            inflating: Forest/Makefile
+            inflating: Forest/build.xml
+            inflating: Forest/forest.mf
+            inflating: Forest/forest/Branch.java
+            inflating: Forest/forest/Example.java
+            inflating: Forest/forest/Forest.java
+            inflating: Forest/forest/ForestController.java
+            inflating: Forest/forest/ForestModel.java
+            inflating: Forest/forest/ForestView.java
+            inflating: Forest/forest/Node.java
+            inflating: Forest/mvc.jar          
+            inflating: Forest/sumida.zip       
+            inflating: Forest/suzumu.zip       
+            inflating: Forest/texts/forest.txt  
+            inflating: Forest/texts/semilattice.txt  
+            inflating: Forest/texts/tree.txt
+        </pre>
+        <li>展開して得られるForestというディレクトリへ移る。
+            <pre class="belt">
+                $ cd Forest
+            </pre>
+            <li>中身を確認する。
+                <pre class="belt">
+                    $ ls *
+                    Makefile	forest.mf	sumida.zip
+                    build.xml	mvc.jar		suzumu.zip
+                    
+                    Forest.app:
+                    Contents
+                    
+                    forest:
+                    Branch.java		ForestController.java	Node.java
+                    Example.java		ForestModel.java
+                    Forest.java		ForestView.java
+                    
+                    texts:
+                    forest.txt	semilattice.txt	tree.txt
+                </pre>
+                
+                <li>makeする。
+                    <pre class="belt">
+                        $ make
+                        env LC_ALL=ja_JP.UTF-8 ant all
+                        Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
+                        Buildfile: /Users/sumidatomoyuki/Forest/build.xml
+                        
+                        prepare:
+                        [mkdir] Created dir: /Users/sumidatomoyuki/Forest/Classes
+                        [echo] on 2014/08/08 at 22:22:47
+                        
+                        compile:
+                        [javac] Compiling 7 source files to /Users/sumidatomoyuki/Forest/Classes
+                        [javac] Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
+                        [echo] on 2014/08/08 at 22:22:47
+                        
+                        jar:
+                        [jar] Building jar: /Users/sumidatomoyuki/Forest/forest.jar
+                        [echo] on 2014/08/08 at 22:22:47
+                        
+                        all:
+                        [echo] on 2014/08/08 at 22:22:47
+                        
+                        BUILD SUCCESSFUL
+                        Total time: 2 seconds
+                        
+                    </pre>
+                    <li>forest.jarが生成されていることを確かめる。
+                        <pre class="belt">
+                            $ ls *
+                            Makefile	forest.jar	mvc.jar		suzumu.zip
+                            build.xml	forest.mf	sumida.zip
+                            
+                            Astah:
+                            Forest.asta		Forestsyousai.asta	class.jpg.bak
+                            Forest.asta.bak		class.jpg		forestsyousai.jpg
+                            
+                            Classes:
+                            forest
+                            
+                            Forest.app:
+                            Contents
+                            
+                            Project_Forest_Problem:
+                            BasicDesign		Manual			TestSpecification
+                            DetailDesign		Program			index.html
+                            DevelopmentPlan		Requirement
+                            DevelopmentResult	TestResult
+                            
+                            forest:
+                            Branch.java		ForestController.java	Node.java
+                            Example.java		ForestModel.java
+                            Forest.java		ForestView.java
+                            
+                            texts:
+                            forest.txt	semilattice.txt	tree.txt                        </pre>
+                        
+                        <li>生成したforest.jarをアプリケーション（Forest.app）の中にインストールする。
+                            <pre class="belt">
+                                $ make install
+                                env LC_ALL=ja_JP.UTF-8 ant install
+                                Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
+                                Buildfile: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/build.xml
+                                
+                                prepare:
+                                [mkdir] Created dir: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Classes
+                                [echo] on 2014/08/08 at 22:25:44
+                                
+                                compile:
+                                [javac] Compiling 7 source files to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Classes
+                                [javac] Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
+                                [echo] on 2014/08/08 at 22:25:44
+                                
+                                jar:
+                                [jar] Building jar: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/forest.jar
+                                [echo] on 2014/08/08 at 22:25:44
+                                
+                                all:
+                                [echo] on 2014/08/08 at 22:25:44
+                                
+                                install:
+                                [copy] Copying 1 file to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Forest.app/Contents/Resources/Java
+                                [copy] Copying 3 files to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Forest.app/Contents/Resources/Java/texts
+                                [echo] on 2014/08/08 at 22:25:44
+                                
+                                BUILD SUCCESSFUL
+                                Total time: 2 seconds
+
+                            </pre>
+                            
+                            
+                            </div>
+                            
+                            </div>
+                            
+
+                        
+
+                
+
+
+<h3><a name="app">実行方法(実行ファイルの動かし方)</a></h3>
+<pre>
+    実行するためのコマンドは以下の通りである。
+    java -jar forest.jar
+    MAC OX Xの場合には、アプリケーションForest.appをダブルクリックする方が簡便である。
+    
+    <blockquote>Forest.app<img class="borderless" src="forest.png" width="128" height="128" alt="applet.pdf"></blockquote>
+    
+    
+    また、openコマンドでForest.appを開いても実行可能である。
+    $ open Forest.app
+    
+    以下に実行例を示す。
+</pre>
+
+<blockquote>
+    <table class="belt" summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="content" summary="table">
+                        <tbody>
+                            <tr>
+                                <td class="center-small"><a href="screen.png"><img class="borderless" src="screen.png" width="620" height="450" alt="Snapshot0"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+
+
+
+
+
+
 <hr>
 <div class="right-small">Copyright 2014 Project Forest, Updated: 2014/08/08(Created: 2009/11/11)</div>
 </body>
