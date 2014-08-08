@@ -3,22 +3,26 @@ package forest;
 
 /**
  * ブランチクラス
+ * テスト良好（2014年8月8日）
  */
 public class Branch extends Object
 {
 
 	/**
 	 * 枝の左側（親ノード）のインスタンスを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private Node parentNode;
 
 	/**
 	 * 枝の右側（子ノード）のインスタンスを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private Node childNode;
 
 	/**
 	 * ブランチのコンストラクタ
+     * テスト良好（2014年8月8日）
 	 */
 	public Branch(Node parentNode, Node childNode)
 	{
@@ -28,6 +32,7 @@ public class Branch extends Object
 
 	/**
 	 * 親ノードのセッター
+     * テスト良好（2014年8月8日）
 	 */
 	public void setParent(Node aNode)
 	{
@@ -36,6 +41,7 @@ public class Branch extends Object
 
 	/**
 	 * 子ノードのセッター
+     * テスト良好（2014年8月8日）
 	 */
 	public void setChild(Node aNode)
 	{
@@ -44,6 +50,7 @@ public class Branch extends Object
 
 	/**
 	 * 親ノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public Node getParent()
 	{
@@ -52,6 +59,7 @@ public class Branch extends Object
 
 	/**
 	 * 子ノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public Node getChild()
 	{

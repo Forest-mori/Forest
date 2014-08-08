@@ -14,12 +14,16 @@ import java.awt.Point;
 import java.awt.FontMetrics;
 import java.util.ArrayList;
 
-
+/**
+ * ForestViewクラス
+ * テスト良好（2014年8月8日）
+ */
 public class ForestView extends mvc.View
 {
     
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。
+     * テスト良好（2014年8月8日）
 	 */
 	private JPanel p;
     
@@ -32,6 +36,7 @@ public class ForestView extends mvc.View
     
 	/**
 	 * 描画を行う。
+     * テスト良好（2014年8月8日）
 	 */
 	public void paintComponent(Graphics aGraphics)
     

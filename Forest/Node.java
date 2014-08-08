@@ -3,51 +3,60 @@ package forest;
 import javax.swing.JLabel;
 import java.util.ArrayList;
 import java.awt.Point;
-
-
-
 import java.util.Collections;
 
+/**
+ * Nodeクラス
+ * テスト良好（2014年8月8日）
+ */
 public class Node extends Object
 {
 	/**
 	 * ノードの番号を束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private int nodeNumber;
     
 	/**
 	 * ノードの名前を束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private String nodeName;
     
 	/**
 	 * このノードの親を束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private ArrayList<Node> Parents;
     
 	/**
 	 * このノードの子を束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private ArrayList<Node> Children;
     
 	/**
 	 * このノードの深さを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private int depth;
     
 	/**
 	 * 探索したかどうかを確認するための属性.未探索→false,探索済→true
+     * テスト良好（2014年8月8日）
 	 */
 	private boolean visit;
     
     
 	/**
 	 * ノードの一座標を束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private Point aPoint;
     
 	/**
 	 * ノードのコンストラクタ
+     * テスト良好（2014年8月8日）
 	 */
 	public Node(int num,String name,int depth)
 	{
@@ -62,6 +71,7 @@ public class Node extends Object
     
 	/**
 	 * ノード番号のゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public int getNumber()
 	{
@@ -70,6 +80,7 @@ public class Node extends Object
     
 	/**
 	 * ノード名のゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public String getName()
 	{
@@ -78,6 +89,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの深さのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public int getDepth()
 	{
@@ -86,6 +98,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの親ノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public ArrayList<Node> getParents()
 	{
@@ -94,6 +107,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの子ノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public ArrayList<Node> getChildren()
 	{
@@ -102,6 +116,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの親ノードを設定する
+     * テスト良好（2014年8月8日）
 	 */
 	public void setParent(Node aNode)
 	{
@@ -110,6 +125,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの子ノードを設定する
+     * テスト良好（2014年8月8日）
 	 */
 	public void setChild(Node aNode)
 	{
@@ -119,6 +135,7 @@ public class Node extends Object
     
 	/**
 	 * 探索済みと設定する
+     * テスト良好（2014年8月8日）
 	 */
 	public void setVisit()
 	{
@@ -127,6 +144,7 @@ public class Node extends Object
     
 	/**
 	 *  探索したかどうか確認する
+     * テスト良好（2014年8月8日）
 	 */
 	public boolean getVisit()
 	{
@@ -135,6 +153,7 @@ public class Node extends Object
     
 	/**
 	 * このノードの座標を返す
+     * テスト良好（2014年8月8日）
 	 */
 	public Point getNodeLocation()
 	{
@@ -143,6 +162,7 @@ public class Node extends Object
     
 	/**
 	 * ノードの座標の初期設定をする
+     * テスト良好（2014年8月8日）
 	 */
 	public void initLocation(int x,int y)
 	{
@@ -152,6 +172,7 @@ public class Node extends Object
     
 	/**
 	 * このノードの座標を変更する
+     * テスト良好（2014年8月8日）
 	 */
 	public void setNodeLocation(int x, int y)
 	{
@@ -166,10 +187,12 @@ public class Node extends Object
 
 /**
  * ノードを辞書順にするコンパレータクラス
+ * テスト良好（2014年8月8日）
  */
 class Comparator implements java.util.Comparator {
     /**
      * ソートするコンパレーター
+     * テスト良好（2014年8月8日）
      */
 	public int compare(Object node1, Object node2) {
 		return ((Node) node1).getName().compareTo(((Node) node2).getName());

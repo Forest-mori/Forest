@@ -12,49 +12,61 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.util.TreeMap;
 
+/**
+ * Forestクラス
+ * テスト良好（2014年8月8日）
+ */
 public class Forest extends Object
 {
     
     
 	/**
 	 * ノードを番号と一緒に束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private TreeMap<Integer,Node> nodes;
     
     
 	/**
 	 * 一時的にノードの深さを保存する
+     * テスト良好（2014年8月8日）
 	 */
 	private HashMap<String,Integer> depths;
     
 	/**
 	 * ブランチを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private ArrayList<Branch> branches;
     
 	/**
 	 * ルートノードを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private ArrayList<Node> roots;
     
 	/**
 	 * テキストのタイプを表す。tree = 0,node = 1, branch = 2
+     * テスト良好（2014年8月8日）
 	 */
 	private int textType;
     
 	/**
 	 * 画面更新用にForestModelを束縛する
+     * テスト良好（2014年8月8日）
 	 */
 	private ForestModel aModel;
     
     
 	/**
 	 * 一番のy座標を持つ変数
+     * テスト良好（2014年8月8日）
 	 */
 	public static int underY;
     
 	/**
 	 * フォレストのコンストラクタ
+     * テスト良好（2014年8月8日）
 	 */
 	public Forest(ForestModel aModel)
 	{
@@ -69,6 +81,7 @@ public class Forest extends Object
     
 	/**
 	 * ForestModelで取ってきたテキストファイルを読み込む
+     * テスト良好（2014年8月8日）
 	 */
 	public void read(File aFile)
 	{
@@ -137,6 +150,7 @@ public class Forest extends Object
     
 	/**
 	 * readで読み込んだデータを元に木を作る
+     * テスト良好（2014年8月8日）
 	 */
 	public void create(String data)
 	{
@@ -167,6 +181,7 @@ public class Forest extends Object
     
 	/**
 	 * 探索処理をして、モデルに通知して画面を更新する
+     * テスト良好（2014年8月8日）
 	 */
 	public void visit(Node aNode, Point aPoint)
 	{
@@ -225,6 +240,7 @@ public class Forest extends Object
     
 	/**
 	 * ノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public TreeMap<Integer,Node> getNode()
 	{
@@ -235,6 +251,7 @@ public class Forest extends Object
     
 	/**
 	 * ルートノードのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public ArrayList<Node> getRoot()
 	{
@@ -243,6 +260,7 @@ public class Forest extends Object
     
 	/**
 	 * ブランチのゲッター
+     * テスト良好（2014年8月8日）
 	 */
 	public ArrayList<Branch> getBranch(){
 		return this.branches;
