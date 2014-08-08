@@ -97,7 +97,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     public void actionPerformed(ActionEvent anActionEvent)
     {
-        if(anActionEvent.getActionCommand().equals("Restart") ){
+        if(anActionEvent.getActionCommand().equals("Stop → Restart") ){
             this.flag = false;
         }
     }
@@ -117,7 +117,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         {
             JPopupMenu popup = new JPopupMenu();
             
-            JMenuItem i1 = new JMenuItem("Restart");
+            JMenuItem i1 = new JMenuItem("Stop → Restart");
             i1.addActionListener(aController);
             popup.add(i1);
             
