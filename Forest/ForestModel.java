@@ -159,12 +159,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     public void open()
     {
-        int i = 0;
-        for (Node aNode : this.aForest.getNode().values())
-        {
-            if(aNode.getVisit() == true)
-                i++;
-        }
+       
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         
         bar_height = new JScrollBar(JScrollBar.VERTICAL);

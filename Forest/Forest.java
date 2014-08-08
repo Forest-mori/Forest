@@ -214,8 +214,7 @@ public class Forest extends Object
 		this.aModel.changed();
         
 		int nodey = aPoint.y;
-		int childcount = 0;
-		for(Node child : aNode.getChildren())
+        for(Node child : aNode.getChildren())
 		{
 			while(nodey <= underY){
                 //16はラベルの縦の長さ
@@ -223,7 +222,6 @@ public class Forest extends Object
 			}
 			this.visit(child,new Point(aNode.getName().length()*10 + aPoint.x,nodey));
 			child.setVisit();
-			childcount++;
             
 		}
 		if(nodey > underY)
