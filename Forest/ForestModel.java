@@ -202,8 +202,8 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         System.out.println("バーの情報縦["+bar_height.getValue()+"]");
         System.out.println("バーの情報横["+bar_wight.getValue()+"]");
         
-        barScore_height = bar_height.getValue() * 2;
-        barScore_wight = bar_wight.getValue() * 10;
+        barScore_height = bar_height.getValue() * 10;
+        barScore_wight = bar_wight.getValue() * 20;
         changed();
         return;
 
