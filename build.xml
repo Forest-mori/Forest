@@ -4,11 +4,11 @@
 
   <property name="package" value="forest" />
   <property name="mvc" value="mvc" />
-  <property name="packagenames" value="${package},${mvc}" />
+<property name="packagenames" value="${package},${mvc}" />
   <property name="destdir" value="./Classes" />
   <property name="docdir" value="./JavaDoc" />
   <property name="instdir" value="./${ant.project.name}.app/Contents/Resources/Java" />
-  <property name="copyright" value="Copyright 2014 Project mori. All Right Reserved." />
+  <property name="copyright" value="Copyright 2014 Moris. All Right Reserved." />
   <property name="zipname" value="${ant.project.name}" />
 
   <tstamp>
@@ -49,7 +49,7 @@
       jarfile="${package}.jar"
       basedir="${destdir}"
       manifest="${package}.mf">
-      <zipfileset src="${mvc}.jar" />
+        <zipfileset src="${mvc}.jar" />
     </jar>
     <echo>on ${date} at ${time}</echo>
   </target>
