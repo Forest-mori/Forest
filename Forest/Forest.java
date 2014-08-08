@@ -208,7 +208,7 @@ public class Forest extends Object
                 //16はラベルの縦の長さ
 				nodey += 16;
 			}
-			this.visit(child,new Point(aNode.getName().length()*20 + aPoint.x,nodey));
+			this.visit(child,new Point(aNode.getName().length()*10 + aPoint.x,nodey));
 			child.setVisit();
 			childcount++;
 
