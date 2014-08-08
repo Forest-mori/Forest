@@ -7,12 +7,9 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFrame;
 import java.awt.Dimension;
-
 import javax.swing.JLabel;
 import javax.swing.JPopupMenu;
-
 import java.util.TreeMap;
-
 import javax.swing.JMenuItem;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -73,12 +70,13 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         this.flag = false;
         this.aForest = new Forest(this);
         this.aView = new ForestView(this,new ForestController(this));
+        
         File aFile = this.Filechooser(aFileChooserDirectory);
         if(aFile == null)
             return;
         this.aForest.read(aFile);
         this.open();
-
+/*
         int y = 1;
         for (Node aNode : this.aForest.getNode().values())
         {
@@ -89,6 +87,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         for(Node aNode : this.aForest.getRoot()){
             this.aForest.visit(aNode,new Point(0,this.aForest.underY));
         }
+         */
     }
 
 
