@@ -226,8 +226,8 @@ public class Forest extends Object
 			childcount++;
             
 		}
-		if(nodey > this.underY)
-			this.underY = nodey;
+		if(nodey > underY)
+			underY = nodey;
 		if(aNode.getVisit() == false)
 			aNode.setNodeLocation(aPoint.x,(nodey+aPoint.y+16) / 2);
         if(aNode.getParents().size() == 0 && aNode.getChildren().size() == 1){
@@ -266,6 +266,14 @@ public class Forest extends Object
 		return this.branches;
 	}
     
+    /**
+     * underYのゲッター
+     */
+    public int getUnderY()
+    {
+        int y = underY;
+        return y;
+    }
     
     
     

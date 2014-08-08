@@ -24,7 +24,7 @@ public class Example extends Object
         }
         
         for(Node aNode : aModel.getForest().getRoot()){
-            aModel.getForest().visit(aNode,new Point(0,aModel.getForest().underY));
+            aModel.getForest().visit(aNode,new Point(0,aModel.getForest().getUnderY()));
         }
 
 		return;
