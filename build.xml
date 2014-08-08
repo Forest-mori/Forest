@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project name="Forest" default="all" basedir=".">
-
   <property name="package" value="forest" />
   <property name="mvc" value="mvc" />
 <property name="packagenames" value="${package},${mvc}" />
@@ -10,21 +8,17 @@
   <property name="instdir" value="./${ant.project.name}.app/Contents/Resources/Java" />
   <property name="copyright" value="Copyright 2014 Moris. All Right Reserved." />
   <property name="zipname" value="${ant.project.name}" />
-
   <tstamp>
     <format property="date" pattern="yyyy/MM/dd" />
     <format property="time" pattern="HH:mm:ss" />
   </tstamp>
-
   <target name="all" depends="jar" description="build all">
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="prepare" depends="" description="prepare to compile">
     <mkdir dir="${destdir}" />
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="compile" depends="prepare" description="compile all sources">
     <javac
       fork="true"
@@ -43,7 +37,6 @@
     </javac>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="jar" depends="compile" description="make jar file">
     <jar
       jarfile="${package}.jar"
@@ -53,7 +46,6 @@
     </jar>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="clean" description="cleaning">
     <delete dir="${destdir}" />
     <delete file="${package}.jar" />
@@ -65,14 +57,12 @@
     </delete>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="test" depends="all" description="test">
     <exec executable="java" spawn="false">
       <arg line="-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar" />
     </exec>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="install" depends="all" description="install into application">
     <copy file="${package}.jar" todir="${instdir}"/>
     <exec executable="chmod">
@@ -83,7 +73,6 @@
     </copy>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="doc" depends="all" description="make document (javadoc)">
     <mkdir dir="${docdir}" />
     <javadoc
@@ -106,7 +95,6 @@
     </javadoc>
     <echo>on ${date} at ${time}</echo>
   </target>
-
   <target name="zip" depends="clean" description="make zip file">
     <delete file="../${zipname}.zip" />
     <zip destfile="../${zipname}.zip">
@@ -114,5 +102,4 @@
     </zip>
     <echo>on ${date} at ${time}</echo>
   </target>
-
 </project>
