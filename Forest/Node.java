@@ -14,38 +14,38 @@ public class Node extends Object
 	 * ノードの番号を束縛する
 	 */
 	private int nodeNumber;
-
+    
 	/**
 	 * ノードの名前を束縛する
 	 */
 	private String nodeName;
-
+    
 	/**
 	 * このノードの親を束縛する
 	 */
 	private ArrayList<Node> Parents;
-
+    
 	/**
 	 * このノードの子を束縛する
 	 */
 	private ArrayList<Node> Children;
-
+    
 	/**
 	 * このノードの深さを束縛する
 	 */
 	private int depth;
-
+    
 	/**
 	 * 探索したかどうかを確認するための属性.未探索→false,探索済→true
 	 */
 	private boolean visit;
-
-
+    
+    
 	/**
 	 * ノードの一座標を束縛する
 	 */
 	private Point aPoint;
-
+    
 	/**
 	 * ノードのコンストラクタ
 	 */
@@ -59,7 +59,7 @@ public class Node extends Object
 		this.visit = false;
 		this.aPoint = null;
 	}
-
+    
 	/**
 	 * ノード番号のゲッター
 	 */
@@ -67,7 +67,7 @@ public class Node extends Object
 	{
 		return this.nodeNumber;
 	}
-
+    
 	/**
 	 * ノード名のゲッター
 	 */
@@ -75,7 +75,7 @@ public class Node extends Object
 	{
 		return this.nodeName;
 	}
-
+    
 	/**
 	 * ノードの深さのゲッター
 	 */
@@ -83,7 +83,7 @@ public class Node extends Object
 	{
 		return this.depth;
 	}
-
+    
 	/**
 	 * ノードの親ノードのゲッター
 	 */
@@ -91,7 +91,7 @@ public class Node extends Object
 	{
 		return this.Parents;
 	}
-
+    
 	/**
 	 * ノードの子ノードのゲッター
 	 */
@@ -99,7 +99,7 @@ public class Node extends Object
 	{
 		return this.Children;
 	}
-
+    
 	/**
 	 * ノードの親ノードを設定する
 	 */
@@ -107,7 +107,7 @@ public class Node extends Object
 	{
 		this.Parents.add(aNode);
 	}
-
+    
 	/**
 	 * ノードの子ノードを設定する
 	 */
@@ -116,7 +116,7 @@ public class Node extends Object
 		this.Children.add(aNode);
         Collections.sort(this.Children, new Comparator());
 	}
-
+    
 	/**
 	 * 探索済みと設定する
 	 */
@@ -124,7 +124,7 @@ public class Node extends Object
 	{
 		this.visit = true;
 	}
-
+    
 	/**
 	 *  探索したかどうか確認する
 	 */
@@ -132,7 +132,7 @@ public class Node extends Object
 	{
 		return this.visit;
 	}
-
+    
 	/**
 	 * このノードの座標を返す
 	 */
@@ -140,7 +140,7 @@ public class Node extends Object
 	{
 		return this.aPoint;
 	}
-
+    
 	/**
 	 * ノードの座標の初期設定をする
 	 */
@@ -148,8 +148,8 @@ public class Node extends Object
 	{
 		this.aPoint = new Point(x,y);
 	}
-
-
+    
+    
 	/**
 	 * このノードの座標を変更する
 	 */
@@ -157,15 +157,20 @@ public class Node extends Object
 	{
 		this.aPoint.setLocation(x,y);
 	}
-
-
-
-
-
+    
+    
+    
+    
+    
 }
 
-
+/**
+ * ノードを辞書順にするコンパレータクラス
+ */
 class Comparator implements java.util.Comparator {
+    /**
+     * ソートするコンパレーター
+     */
 	public int compare(Object node1, Object node2) {
 		return ((Node) node1).getName().compareTo(((Node) node2).getName());
 	}

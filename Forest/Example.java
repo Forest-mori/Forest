@@ -8,12 +8,6 @@ public class Example extends Object
 	public static void main(String args[])
 	{
 		ForestModel aModel = new ForestModel();
-        /*File aFile = aModel.Filechooser(aFileChooserDirectory);
-        if(aFile == null)
-            return;
-        aModel.getForest().read(aFile);
-        this.open();*/
-        
         int y = 1;
         for (Node aNode : aModel.getForest().getNode().values())
         {

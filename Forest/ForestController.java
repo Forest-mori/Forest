@@ -46,9 +46,9 @@ public class ForestController extends mvc.Controller implements ActionListener
 	 */
 	public void mousePressed(MouseEvent aMouseEvent) {
 		
-        if(aMouseEvent.getButton() == 3){
+        if(aMouseEvent.getButton() == 3)
+        {
             showPopupMenu(aMouseEvent);
-            System.out.println("aaaa");
         }
         
         

@@ -14,59 +14,59 @@ import java.util.TreeMap;
 
 public class Forest extends Object
 {
-
+    
     
 	/**
 	 * ノードを番号と一緒に束縛する
 	 */
 	private TreeMap<Integer,Node> nodes;
-
-
+    
+    
 	/**
 	 * 一時的にノードの深さを保存する
 	 */
 	private HashMap<String,Integer> depths;
-
+    
 	/**
 	 * ブランチを束縛する
 	 */
 	private ArrayList<Branch> branches;
-
+    
 	/**
 	 * ルートノードを束縛する
 	 */
 	private ArrayList<Node> roots;
-
+    
 	/**
 	 * テキストのタイプを表す。tree = 0,node = 1, branch = 2
 	 */
 	private int textType;
-
+    
 	/**
 	 * 画面更新用にForestModelを束縛する
 	 */
 	private ForestModel aModel;
-
-
+    
+    
 	/**
 	 * 一番のy座標を持つ変数
 	 */
 	public static int underY;
-
+    
 	/**
 	 * フォレストのコンストラクタ
 	 */
 	public Forest(ForestModel aModel)
 	{
-    this.nodes = new TreeMap<Integer,Node>();
+        this.nodes = new TreeMap<Integer,Node>();
 		this.branches = new ArrayList<Branch>();
 		this.roots = new ArrayList<Node>();
 		this.depths = new HashMap<String,Integer>();
 		this.textType = 5;
 		this.aModel = aModel;
-
+        
 	}
-
+    
 	/**
 	 * ForestModelで取ってきたテキストファイルを読み込む
 	 */
@@ -75,10 +75,9 @@ public class Forest extends Object
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(aFile));
 			String str = br.readLine();
-
+            
 			while(str != null){
-				System.out.println(str);
-
+				
 				if(str.equals("trees:"))
 				{
 					this.textType = 0;
@@ -95,39 +94,39 @@ public class Forest extends Object
 				{
 					int depthcount = 0;
 					String nodeName = null;
-
+                    
 					String depth[] = str.split("-- ");
 					for(int k = 0; k < depth.length; k++)
 					{
 						if(depth[k].equals("|"))
 						{
-
+                            
 							depthcount = depthcount + 1;
 						}
 						else
 						{
 							nodeName = depth[k];
-
+                            
 						}
 					}
-
+                    
 					this.depths.put(nodeName,depthcount);
-
-
+                    
+                    
 				}
-
-
+                
+                
 				else if(this.textType == 1 || this.textType == 2)
 				{
 					this.create(str);
 				}
-
-
+                
+                
 				str = br.readLine();
-
-
+                
+                
 			}
-
+            
 			br.close();
 		}catch(FileNotFoundException e){
 			System.out.println(e);
@@ -135,7 +134,7 @@ public class Forest extends Object
 			System.out.println(e);
 		}
 	}
-
+    
 	/**
 	 * readで読み込んだデータを元に木を作る
 	 */
@@ -143,14 +142,13 @@ public class Forest extends Object
 	{
 		if(this.textType == 1)
 		{
-
+            
 			String[] node = data.split(", ");
 			Node aNode = new Node(Integer.parseInt(node[0]),node[1],this.depths.get(node[1]));
 			this.nodes.put(Integer.parseInt(node[0]),aNode);
 			if(this.depths.get(node[1]) == 0){
 				this.roots.add(aNode);
 			}
-			//System.out.println("名前＝" + node[1] + "深さ＝" + aNode.getDepth());
 		}
 		else if(this.textType == 2)
 		{
@@ -166,7 +164,7 @@ public class Forest extends Object
 		}
 		return;
 	}
-
+    
 	/**
 	 * 探索処理をして、モデルに通知して画面を更新する
 	 */
@@ -179,27 +177,27 @@ public class Forest extends Object
             if(aModel.getFlag() == true){
                 flag = true;
             }
-        
-                System.out.println("false");
-
-        }
             
+            System.out.println("false");
+            
+        }
+        
 		if(aNode.getVisit() == false)
 		{
 			aNode.setNodeLocation(aPoint.x,aPoint.y);
 		}
-
+        
 		try
 		{
-                Thread.sleep(100);
+            Thread.sleep(100);
 		}
 		catch (InterruptedException anException)
 		{
 			throw new RuntimeException(anException.toString());
 		}
-
+        
 		this.aModel.changed();
-
+        
 		int nodey = aPoint.y;
 		int childcount = 0;
 		for(Node child : aNode.getChildren())
@@ -211,7 +209,7 @@ public class Forest extends Object
 			this.visit(child,new Point(aNode.getName().length()*10 + aPoint.x,nodey));
 			child.setVisit();
 			childcount++;
-
+            
 		}
 		if(nodey > this.underY)
 			this.underY = nodey;
@@ -221,10 +219,10 @@ public class Forest extends Object
             Node child = aNode.getChildren().get(0);
             aNode.setNodeLocation(aPoint.x,child.getNodeLocation().y);
         }
-
-
+        
+        
 	}
-
+    
 	/**
 	 * ノードのゲッター
 	 */
@@ -242,17 +240,17 @@ public class Forest extends Object
 	{
 		return this.roots;
 	}
-
+    
 	/**
 	 * ブランチのゲッター
 	 */
 	public ArrayList<Branch> getBranch(){
 		return this.branches;
 	}
-
     
-
-
+    
+    
+    
 }
 
 

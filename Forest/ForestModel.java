@@ -31,12 +31,12 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      *Forestクラスのインスタンスを束縛する変数
      */
     private Forest aForest;
-
+    
     /**
      * JFrameを束縛する
      */
     public JFrame aWindow;
-
+    
     /*
      * ForestView を内包する
      */
@@ -58,23 +58,23 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     private int barScore_wight;
     
-
+    
     /**
      * 整列を止めるか止めないかを決める変数
      */
     public boolean flag;
-
+    
     /**
      * File chooserの初期パス指定
      */
     public String aFileChooserDirectory = "./texts";
-
+    
     /**
      * コンストラクタ
      */
     public ForestModel(){
         super();
-
+        
         this.aWindow = null;
         this.flag = false;
         this.aForest = new Forest(this);
@@ -85,21 +85,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
             return;
         this.aForest.read(aFile);
         this.open();
-/*
-        int y = 1;
-        for (Node aNode : this.aForest.getNode().values())
-        {
-            aNode.initLocation(0,y);
-            y += 16;
-        }
-
-        for(Node aNode : this.aForest.getRoot()){
-            this.aForest.visit(aNode,new Point(0,this.aForest.underY));
-        }
-         */
     }
-
-
+    
+    
     /**
      * ポップアップメニューの項目が選択された時の処理をするメソッド
      */
@@ -109,16 +97,13 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
             this.flag = false;
         }
     }
-
+    
 	/**
 	 * メニューをポップアップする。
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent, ForestController aController)
 	{
-       /* if(this.flag == true)
-            this.flag = false;
-        else
-            this.flag = true;*/
+        
         this.flag = true;
         
         if (aMouseEvent.isPopupTrigger())
@@ -129,17 +114,13 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
             i1.addActionListener(aController);
             popup.add(i1);
             
-            JMenuItem i2 = new JMenuItem("SawtoothWave");
-            i2.addActionListener(aController);
-            popup.add(i2);
-            
             popup.show(aMouseEvent.getComponent(), aMouseEvent.getX(), aMouseEvent.getY());
         }
         
-
-
-        }
-
+        
+        
+    }
+    
     /**
      * ファイルを選んでくるメソッド
      */
@@ -151,7 +132,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         ch.showOpenDialog(null);
         return ch.getSelectedFile();
     }
-
+    
     /**
      * ウィンドウを表示させる
      */
@@ -164,17 +145,17 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
                 i++;
         }
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-
+        
         bar_height = new JScrollBar(JScrollBar.VERTICAL);
         bar_wight = new JScrollBar(JScrollBar.HORIZONTAL);
-
+        
         bar_height.addAdjustmentListener(this);
         bar_wight.addAdjustmentListener(this);
-
+        
         aView.add(bar_height);
         aView.add(bar_wight);
-
-
+        
+        
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
         aWindow.getContentPane().add(bar_height , BorderLayout.EAST);
@@ -186,7 +167,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         aWindow.setVisible(true);
         return;
     }
-
+    
     /**
      * Forestのインスタンスのゲッター
      */
@@ -199,14 +180,12 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     public void adjustmentValueChanged(AdjustmentEvent e)
     {
-        System.out.println("バーの情報縦["+bar_height.getValue()+"]");
-        System.out.println("バーの情報横["+bar_wight.getValue()+"]");
         
         barScore_height = bar_height.getValue() * 10;
         barScore_wight = bar_wight.getValue() * 20;
         changed();
         return;
-
+        
 	}
     /**
      *　縦スクロールのゲッター
@@ -229,7 +208,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
     {
         return this.flag;
     }
-
-
-
+    
+    
+    
 }

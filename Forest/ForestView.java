@@ -17,27 +17,26 @@ import java.util.ArrayList;
 
 public class ForestView extends mvc.View
 {
-
+    
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。
 	 */
 	private JPanel p;
-
+    
 	public ForestView(ForestModel aModel,ForestController aController)
 	{
 		super(aModel,aController);
 		p = new JPanel();
 	}
-
-
+    
+    
 	/**
 	 * 描画を行う。
 	 */
 	public void paintComponent(Graphics aGraphics)
-
+    
 	{
-		//System.out.println("------------------viewによる動作----------------");
-		super.paintComponent(aGraphics);
+        super.paintComponent(aGraphics);
 		ForestModel aModel = (ForestModel)model;
 		Forest aForest = aModel.getForest();
 		if(aForest == null)
@@ -46,26 +45,24 @@ public class ForestView extends mvc.View
 		}
 		else
 		{
-			//System.out.println("フォレストデータを確認");
-
+            
 			if(aModel == null)
 			{
-				//System.out.println("モデルが内包されていません");
+				System.out.println("モデルが内包されていません");
 			}
 			int width = this.getWidth();
 			int height = this.getHeight();
 			aGraphics.setColor(Color.black);
-			//System.out.println("nodeを作成してみます");
 			TreeMap<Integer,Node> aNode = aForest.getNode();
 			ArrayList<Branch> aBranch = aForest.getBranch();
-
+            
 			if((aNode == null) && (aBranch == null))
 			{
-			//	System.out.println("フォレストにノードがありません");
+                System.out.println("フォレストにノードがありません");
 			}
 			else
 			{
-				//System.out.println("フォレストにノードを確認");
+				
 				int i = 0;
 				int widthes = 0;
 				Point aPoint = null;
@@ -73,20 +70,18 @@ public class ForestView extends mvc.View
                 
                 int barScore_height = -aModel.getBar();
                 int barScore_wight = -aModel.getBar2();
-
+                
 				for(Node aTest : aNode.values())
 				{
-					//System.out.println("----名前：" + aTest.getName() + "["+i+"]番目----");
-				   // System.out.println("名前["+aTest.getName()+"]の位置座標:"+aTest.getNodeLocation());
+					
 					widthes = fm.stringWidth(aTest.getName());
-
-					//System.out.println("今回の文字のサイズ["+widthes+"]");
-					//ノードのサークルを作成する。(文字入り)
+                    
+                    
 					aPoint = aTest.getNodeLocation();
 					aGraphics.setColor(Color.white);
 					aGraphics.drawRect(aPoint.x+barScore_wight,aPoint.y+barScore_height,widthes+2,16);
 					aGraphics.drawString(aTest.getName(),aPoint.x+2+barScore_wight,aPoint.y+13+barScore_height);
-
+                    
 					i++;
 				}
 				for (Branch aTest : aBranch)
@@ -97,13 +92,12 @@ public class ForestView extends mvc.View
 					aGraphics.drawLine(parent.x+widthes+2+barScore_wight,parent.y+8+barScore_height,child.x+barScore_wight,child.y+barScore_height+8);
 				}
 			}
-
+            
 		}
-		//System.out.println("------------------viewによる動作終了----------------");
-
+		
 		return;
-
+        
 	}
-
-
+    
+    
 }
