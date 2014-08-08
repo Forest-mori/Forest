@@ -42,13 +42,22 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
      */
     protected ForestView aView;
     /*
-     *
+     * スクロールバーを保存するフィールド（縦）
      */
-    public int saveHeigth = 0;
-
-    public JScrollBar bar;
-
-    private int barScore;
+    public JScrollBar bar_height;
+    /*
+     * スクロールバーを保存するフィールド（横）
+     */
+    public JScrollBar bar_wight;
+    /*
+     * 縦のスクロール量を保存するフィールド
+     */
+    private int barScore_height;
+    /*
+     * 横のスクロール量を保存するフィールド
+     */
+    private int barScore_wight;
+    
 
     /**
      * 整列を止めるか止めないかを決める変数
@@ -156,19 +165,25 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         }
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 
-        bar = new JScrollBar(JScrollBar.VERTICAL);
-        bar.addAdjustmentListener(this);
-        aView.add(bar);
+        bar_height = new JScrollBar(JScrollBar.VERTICAL);
+        bar_wight = new JScrollBar(JScrollBar.HORIZONTAL);
+
+        bar_height.addAdjustmentListener(this);
+        bar_wight.addAdjustmentListener(this);
+
+        aView.add(bar_height);
+        aView.add(bar_wight);
+
 
         aWindow = new JFrame("test");
         aWindow.getContentPane().add(aView);
-        aWindow.getContentPane().add(bar , BorderLayout.EAST);
+        aWindow.getContentPane().add(bar_height , BorderLayout.EAST);
+        aWindow.getContentPane().add(bar_wight , BorderLayout.NORTH);
         aWindow.setMinimumSize(d);
         aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aWindow.setSize(800,400);
         aWindow.setLocation(0,0);
         aWindow.setVisible(true);
-        saveHeigth = d.height;
         return;
     }
 
@@ -180,23 +195,33 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         return this.aForest;
     }
     /**
-     *
+     * スクロールの取得
      */
     public void adjustmentValueChanged(AdjustmentEvent e)
     {
-        System.out.println("バーの情報["+bar.getValue()+"]");
-        barScore = bar.getValue();
+        System.out.println("バーの情報縦["+bar_height.getValue()+"]");
+        System.out.println("バーの情報横["+bar_wight.getValue()+"]");
+        
+        barScore_height = bar_height.getValue() * 2;
+        barScore_wight = bar_wight.getValue() * 10;
         changed();
         return;
+
 	}
     /**
-     *
+     *　縦スクロールのゲッター
      */
     public int getBar()
     {
-        return barScore;
+        return barScore_height;
     }
-
+    /**
+     *　横スクロールのゲッター
+     */
+    public int getBar2()
+    {
+        return barScore_wight;
+    }
     /**
      * フラグのゲッター
      */
