@@ -86,6 +86,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月8日）
+	 * @param anActionEvent
 	 */
 	public void actionPerformed(ActionEvent anActionEvent)
 	{
@@ -97,6 +98,8 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * メニューをポップアップする。 テスト良好（2014年8月8日）
+	 * @param aMouseEvent
+	 * @param aController
 	 */
 	public void showPopupMenu(MouseEvent aMouseEvent,
 	        ForestController aController)
@@ -120,6 +123,8 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * ファイルを選んでくるメソッド テスト良好（2014年8月8日）
+	 * @param aFileChooserDirectory
+	 * @return ch.getSelectedFile()
 	 */
 	public File Filechooser(String aFileChooserDirectory)
 	{
@@ -162,6 +167,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * Forestのインスタンスのゲッター テスト良好（2014年8月8日）
+	 * @return aForest
 	 */
 	public Forest getForest()
 	{
@@ -170,6 +176,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * スクロールの取得 テスト良好（2014年8月8日）
+	 * @param e
 	 */
 	public void adjustmentValueChanged(AdjustmentEvent e)
 	{
@@ -182,7 +189,8 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * 　縦スクロールのゲッター テスト良好（2014年8月8日）
+	 * 縦スクロールのゲッター テスト良好（2014年8月8日）
+	 * @return barScore_height
 	 */
 	public int getBar()
 	{
@@ -190,7 +198,8 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * 　横スクロールのゲッター テスト良好（2014年8月8日）
+	 * 横スクロールのゲッター テスト良好（2014年8月8日）
+	 * @return barScore_wight
 	 */
 	public int getBar2()
 	{
@@ -199,6 +208,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * フラグのゲッター テスト良好（2014年8月8日）
+	 * @return flag
 	 */
 	public boolean getFlag()
 	{

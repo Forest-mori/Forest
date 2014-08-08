@@ -46,6 +46,9 @@ public class Node extends Object
 
 	/**
 	 * ノードのコンストラクタ テスト良好（2014年8月8日）
+	 * @param num
+	 * @param name
+	 * @param depth
 	 */
 	public Node(int num, String name, int depth)
 	{
@@ -60,6 +63,7 @@ public class Node extends Object
 
 	/**
 	 * ノード番号のゲッター テスト良好（2014年8月8日）
+	 * @return nodeNumber
 	 */
 	public int getNumber()
 	{
@@ -68,6 +72,7 @@ public class Node extends Object
 
 	/**
 	 * ノード名のゲッター テスト良好（2014年8月8日）
+	 * @return nodeName
 	 */
 	public String getName()
 	{
@@ -76,6 +81,7 @@ public class Node extends Object
 
 	/**
 	 * ノードの深さのゲッター テスト良好（2014年8月8日）
+	 * @return depth
 	 */
 	public int getDepth()
 	{
@@ -84,6 +90,7 @@ public class Node extends Object
 
 	/**
 	 * ノードの親ノードのゲッター テスト良好（2014年8月8日）
+	 * @return parents
 	 */
 	public ArrayList<Node> getParents()
 	{
@@ -92,6 +99,7 @@ public class Node extends Object
 
 	/**
 	 * ノードの子ノードのゲッター テスト良好（2014年8月8日）
+	 * @return Children
 	 */
 	public ArrayList<Node> getChildren()
 	{
@@ -100,6 +108,7 @@ public class Node extends Object
 
 	/**
 	 * ノードの親ノードを設定する テスト良好（2014年8月8日）
+	 * @param aNode
 	 */
 	public void setParent(Node aNode)
 	{
@@ -108,6 +117,7 @@ public class Node extends Object
 
 	/**
 	 * ノードの子ノードを設定する テスト良好（2014年8月8日）
+	 * @param aNode
 	 */
 	public void setChild(Node aNode)
 	{
@@ -125,6 +135,7 @@ public class Node extends Object
 
 	/**
 	 * 探索したかどうか確認する テスト良好（2014年8月8日）
+	 * @return visit
 	 */
 	public boolean getVisit()
 	{
@@ -133,6 +144,7 @@ public class Node extends Object
 
 	/**
 	 * このノードの座標を返す テスト良好（2014年8月8日）
+	 * @return aPoint
 	 */
 	public Point getNodeLocation()
 	{
@@ -141,6 +153,8 @@ public class Node extends Object
 
 	/**
 	 * ノードの座標の初期設定をする テスト良好（2014年8月8日）
+	 * @param x
+	 * @param y
 	 */
 	public void initLocation(int x, int y)
 	{
@@ -149,6 +163,8 @@ public class Node extends Object
 
 	/**
 	 * このノードの座標を変更する テスト良好（2014年8月8日）
+	 * @param x
+	 * @param y
 	 */
 	public void setNodeLocation(int x, int y)
 	{
@@ -164,6 +180,9 @@ class Comparator implements java.util.Comparator<Object>
 {
 	/**
 	 * ソートするコンパレーター テスト良好（2014年8月8日）
+	 * @param node1
+	 * @param node2
+	 * @return ((Node) node1).getName().compareTo(((Node) node2).getName())
 	 */
 	public int compare(Object node1, Object node2)
 	{

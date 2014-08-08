@@ -9,6 +9,7 @@ public class Example extends Object
 {
 	/**
 	 * モデルを生成し、すべて準備ができた状態で、ノードの初期位置を設定し探索開始する テスト良好（2014年8月8日）
+	 * @param args
 	 */
 	public static void main(String args[])
 	{

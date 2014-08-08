@@ -24,7 +24,7 @@
       fork="true"
       srcdir="${basedir}"
       destdir="${destdir}"
-      includeAntRuntime="true" 
+      includeAntRuntime="true"
       encoding="UTF-8"
       deprecation="on"
       verbose="false">
@@ -73,6 +73,7 @@
     </copy>
     <echo>on ${date} at ${time}</echo>
   </target>
+
   <target name="doc" depends="all" description="make document (javadoc)">
     <mkdir dir="${docdir}" />
     <javadoc

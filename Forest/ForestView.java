@@ -16,6 +16,8 @@ public class ForestView extends mvc.View
 
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月8日）
+	 * @param aModel
+	 * @param aController
 	 */
 	public ForestView(ForestModel aModel, ForestController aController)
 	{
@@ -25,6 +27,7 @@ public class ForestView extends mvc.View
 
 	/**
 	 * 描画を行う。 テスト良好（2014年8月8日）
+	 * @param aGraphics
 	 */
 	public void paintComponent(Graphics aGraphics)
 	{

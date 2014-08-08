@@ -53,6 +53,7 @@ public class Forest extends Object
 
 	/**
 	 * フォレストのコンストラクタ テスト良好（2014年8月8日）
+	 * @param aModel
 	 */
 	public Forest(ForestModel aModel)
 	{
@@ -66,7 +67,9 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ForestModelで取ってきたテキストファイルを読み込む テスト良好（2014年8月8日）
+	 * ForestModelで取ってきたテキストファイルを読み込む 
+	 * テスト良好（2014年8月8日）
+	 * @param aFile
 	 */
 	public void read(File aFile)
 	{
@@ -137,6 +140,7 @@ public class Forest extends Object
 
 	/**
 	 * readで読み込んだデータを元に木を作る テスト良好（2014年8月8日）
+	 * @param data
 	 */
 	public void create(String data)
 	{
@@ -169,6 +173,8 @@ public class Forest extends Object
 
 	/**
 	 * 探索処理をして、モデルに通知して画面を更新する テスト良好（2014年8月8日）
+	 * @param aNode
+	 * @param aPoint
 	 */
 	public void visit(Node aNode, Point aPoint)
 	{
@@ -228,6 +234,7 @@ public class Forest extends Object
 
 	/**
 	 * ノードのゲッター テスト良好（2014年8月8日）
+	 * @return nodes
 	 */
 	public TreeMap<Integer, Node> getNode()
 	{
@@ -236,6 +243,7 @@ public class Forest extends Object
 
 	/**
 	 * ルートノードのゲッター テスト良好（2014年8月8日）
+	 * @return roots
 	 */
 	public ArrayList<Node> getRoot()
 	{
@@ -244,6 +252,7 @@ public class Forest extends Object
 
 	/**
 	 * ブランチのゲッター テスト良好（2014年8月8日）
+	 * @return branches
 	 */
 	public ArrayList<Branch> getBranch()
 	{
@@ -252,6 +261,7 @@ public class Forest extends Object
 
 	/**
 	 * underYのゲッター
+	 * @return y
 	 */
 	public int getUnderY()
 	{
