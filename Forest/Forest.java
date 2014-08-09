@@ -47,13 +47,15 @@ public class Forest extends Object
 	private ForestModel aModel;
 
 	/**
-	 * 一番のy座標を持つ変数 テスト良好（2014年8月8日）
+	 * 一番下のy座標を持つ変数 テスト良好（2014年8月8日）
 	 */
 	public static int underY;
 
 	/**
 	 * フォレストのコンストラクタ テスト良好（2014年8月8日）
+	 * 
 	 * @param aModel
+	 *            　ForestModelを内包する変数
 	 */
 	public Forest(ForestModel aModel)
 	{
@@ -67,9 +69,11 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ForestModelで取ってきたテキストファイルを読み込む 
-	 * テスト良好（2014年8月8日）
+	 * ForestModelで取ってきたテキストファイルを読み込む テスト良好（2014年8月8日）
+	 * 
 	 * @param aFile
+	 *            検査対象となるファイル
+	 * 
 	 */
 	public void read(File aFile)
 	{
@@ -140,7 +144,9 @@ public class Forest extends Object
 
 	/**
 	 * readで読み込んだデータを元に木を作る テスト良好（2014年8月8日）
+	 * 
 	 * @param data
+	 *            読み込んだデータ
 	 */
 	public void create(String data)
 	{
@@ -173,8 +179,11 @@ public class Forest extends Object
 
 	/**
 	 * 探索処理をして、モデルに通知して画面を更新する テスト良好（2014年8月8日）
+	 * 
 	 * @param aNode
+	 *            Forestクラスのインスタンスを束縛する変数
 	 * @param aPoint
+	 *            ピクチャ座標
 	 */
 	public void visit(Node aNode, Point aPoint)
 	{
@@ -234,7 +243,8 @@ public class Forest extends Object
 
 	/**
 	 * ノードのゲッター テスト良好（2014年8月8日）
-	 * @return nodes
+	 * 
+	 * @return nodes ノードを番号と一緒に束縛している変数
 	 */
 	public TreeMap<Integer, Node> getNode()
 	{
@@ -243,7 +253,8 @@ public class Forest extends Object
 
 	/**
 	 * ルートノードのゲッター テスト良好（2014年8月8日）
-	 * @return roots
+	 * 
+	 * @return roots ルートノードを束縛する変数
 	 */
 	public ArrayList<Node> getRoot()
 	{
@@ -252,7 +263,8 @@ public class Forest extends Object
 
 	/**
 	 * ブランチのゲッター テスト良好（2014年8月8日）
-	 * @return branches
+	 * 
+	 * @return branches ブランチを束縛する変数
 	 */
 	public ArrayList<Branch> getBranch()
 	{
@@ -260,8 +272,9 @@ public class Forest extends Object
 	}
 
 	/**
-	 * underYのゲッター
-	 * @return y
+	 * underYのゲッター　テスト良好（2014年8月9日）
+	 * 
+	 * @return y 一番下のy座標を持つ変数
 	 */
 	public int getUnderY()
 	{

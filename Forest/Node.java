@@ -46,9 +46,13 @@ public class Node extends Object
 
 	/**
 	 * ノードのコンストラクタ テスト良好（2014年8月8日）
+	 * 
 	 * @param num
+	 *            ノードのナンバリング
 	 * @param name
+	 *            ノードの名前
 	 * @param depth
+	 *            　ノードの深さ
 	 */
 	public Node(int num, String name, int depth)
 	{
@@ -63,7 +67,8 @@ public class Node extends Object
 
 	/**
 	 * ノード番号のゲッター テスト良好（2014年8月8日）
-	 * @return nodeNumber
+	 * 
+	 * @return nodeNumber ノードのナンバリング
 	 */
 	public int getNumber()
 	{
@@ -72,7 +77,8 @@ public class Node extends Object
 
 	/**
 	 * ノード名のゲッター テスト良好（2014年8月8日）
-	 * @return nodeName
+	 * 
+	 * @return nodeName　ノードの名前
 	 */
 	public String getName()
 	{
@@ -81,7 +87,8 @@ public class Node extends Object
 
 	/**
 	 * ノードの深さのゲッター テスト良好（2014年8月8日）
-	 * @return depth
+	 * 
+	 * @return depth　ノードの深さ
 	 */
 	public int getDepth()
 	{
@@ -90,7 +97,8 @@ public class Node extends Object
 
 	/**
 	 * ノードの親ノードのゲッター テスト良好（2014年8月8日）
-	 * @return parents
+	 * 
+	 * @return parents　ノードの親ノード
 	 */
 	public ArrayList<Node> getParents()
 	{
@@ -99,7 +107,8 @@ public class Node extends Object
 
 	/**
 	 * ノードの子ノードのゲッター テスト良好（2014年8月8日）
-	 * @return Children
+	 * 
+	 * @return Children　ノードの子ノード
 	 */
 	public ArrayList<Node> getChildren()
 	{
@@ -108,7 +117,9 @@ public class Node extends Object
 
 	/**
 	 * ノードの親ノードを設定する テスト良好（2014年8月8日）
+	 * 
 	 * @param aNode
+	 *            　Nodeクラスのインスタンスを束縛する変数
 	 */
 	public void setParent(Node aNode)
 	{
@@ -117,7 +128,9 @@ public class Node extends Object
 
 	/**
 	 * ノードの子ノードを設定する テスト良好（2014年8月8日）
+	 * 
 	 * @param aNode
+	 *            Nodeクラスのインスタンスを束縛する変数
 	 */
 	public void setChild(Node aNode)
 	{
@@ -135,7 +148,8 @@ public class Node extends Object
 
 	/**
 	 * 探索したかどうか確認する テスト良好（2014年8月8日）
-	 * @return visit
+	 * 
+	 * @return visit 探索済みかどうか応答する変数
 	 */
 	public boolean getVisit()
 	{
@@ -144,7 +158,8 @@ public class Node extends Object
 
 	/**
 	 * このノードの座標を返す テスト良好（2014年8月8日）
-	 * @return aPoint
+	 * 
+	 * @return aPoint ピクチャ座標
 	 */
 	public Point getNodeLocation()
 	{
@@ -153,8 +168,11 @@ public class Node extends Object
 
 	/**
 	 * ノードの座標の初期設定をする テスト良好（2014年8月8日）
+	 * 
 	 * @param x
+	 *            ノードのx座標
 	 * @param y
+	 *            ノードのy座標
 	 */
 	public void initLocation(int x, int y)
 	{
@@ -163,8 +181,11 @@ public class Node extends Object
 
 	/**
 	 * このノードの座標を変更する テスト良好（2014年8月8日）
+	 * 
 	 * @param x
+	 *            ノードのx座標
 	 * @param y
+	 *            ノードのy座標
 	 */
 	public void setNodeLocation(int x, int y)
 	{
@@ -180,10 +201,15 @@ class Comparator implements java.util.Comparator<Object>
 {
 	/**
 	 * ソートするコンパレーター テスト良好（2014年8月8日）
+	 * 
 	 * @param node1
+	 *            　比較するノード
 	 * @param node2
-	 * @return ((Node) node1).getName().compareTo(((Node) node2).getName())
+	 *            比較するノード
+	 * @return ((Node) node1).getName().compareTo(((Node)
+	 *         node2).getName())　比較して辞書順にしたノード
 	 */
+	@Override
 	public int compare(Object node1, Object node2)
 	{
 		return ((Node) node1).getName().compareTo(((Node) node2).getName());

@@ -13,40 +13,49 @@ import java.util.ArrayList;
  */
 public class ForestView extends mvc.View
 {
-    
-    private Graphics graphic;
-    /**
-	 * スクロール量としてPointのインスタンスを束縛する。
-	 * 良好（2010年7月25日）
+
+	/**
+	 * テスト良好(2014年8月9日)
+	 */
+	private Graphics graphic;
+
+	/**
+	 * スクロール量としてPointのインスタンスを束縛する。 テスト良好（2010年7月25日）
 	 */
 	private Point offset;
-    /**
-     * 保存用Point
-     */
-    private Point savePoint;
-    
+
+	/**
+	 * 保存用Point テスト良好(2014年8月9日)
+	 */
+	private Point savePoint;
+
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月8日）
+	 * 
 	 * @param aModel
+	 *            ForestModelを内包する変数
 	 * @param aController
+	 *            ForestControllerを内包する変数
 	 */
 	public ForestView(ForestModel aModel, ForestController aController)
 	{
 		super(aModel, aController);
-        offset = new Point(0,0);
-        savePoint = new Point(0,0);
+		offset = new Point(0, 0);
+		savePoint = new Point(0, 0);
 		new JPanel();
 	}
 
 	/**
 	 * 描画を行う。 テスト良好（2014年8月8日）
+	 * 
 	 * @param aGraphics
 	 */
+	@Override
 	public void paintComponent(Graphics aGraphics)
 	{
 		super.paintComponent(aGraphics);
 		ForestModel aModel = (ForestModel) model;
-        this.graphic = aGraphics;
+		this.graphic = aGraphics;
 		if (aModel == null)
 		{
 			System.out.println("モデルが内包されていません");
@@ -77,8 +86,8 @@ public class ForestView extends mvc.View
 
 				int barScore_height = -aModel.getBar() + offset.y;
 				int barScore_wight = -aModel.getBar2() + offset.x;
-                
-                setOffset(new Point(barScore_wight,barScore_height));
+
+				setOffset(new Point(barScore_wight, barScore_height));
 
 				for (Node aTest : aNode.values())
 				{
@@ -108,34 +117,56 @@ public class ForestView extends mvc.View
 
 		return;
 	}
-    
-    public Graphics getGraphic()
-    {
-        return graphic;
-    }
-    /**
-	 * スクロール量を指定された座標に設定（絶対スクロール）する。
-	 * 良好（2010年7月25日）
+
+	/**
+	 * テスト良好(2014年8月9日)
+	 * 
+	 * @return graphic
 	 */
+	public Graphics getGraphic()
+	{
+		return graphic;
+	}
+
+	/**
+	 * スクロール量を指定された座標に設定（絶対スクロール）する。 テスト良好（2010年7月25日）
+	 * 
+	 * @param aPoint
+	 *            ピクチャ座標
+	 */
+	@Override
 	public void scrollTo(Point aPoint)
 	{
-        System.out.println("変化量.x"+aPoint.x);
-        System.out.println("変化量.y"+aPoint.y);
-        //System.out.println("scrollTo");
+		System.out.println("変化量.x" + aPoint.x);
+		System.out.println("変化量.y" + aPoint.y);
+		// System.out.println("scrollTo");
 		offset.x = offset.x + aPoint.x;
-        offset.y = offset.y + aPoint.y;
-        System.out.println("x="+offset.x);
-        System.out.println("y="+offset.y);
-        this.repaint();
+		offset.y = offset.y + aPoint.y;
+		System.out.println("x=" + offset.x);
+		System.out.println("y=" + offset.y);
+		this.repaint();
 		return;
 	}
-    public void setOffset(Point aPoint)
-    {
-        savePoint = aPoint;
-    }
-    public Point getOffset()
-    {
-        return savePoint;
-    }
-    
+
+	/**
+	 * 保存用スクロール座標のセッター　テスト良好（2014年8月9日）
+	 * 
+	 * @param aPoint
+	 *            　ピクチャ座標
+	 */
+	public void setOffset(Point aPoint)
+	{
+		savePoint = aPoint;
+	}
+
+	/**
+	 * 保存用スクロール座標のゲッター　テスト良好（2014年8月9日）
+	 * 
+	 * @return savePoint 保存用ピクチャ座標
+	 */
+	public Point getOffset()
+	{
+		return savePoint;
+	}
+
 }

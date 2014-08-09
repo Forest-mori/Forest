@@ -18,8 +18,11 @@ public class Branch extends Object
 
 	/**
 	 * ブランチのコンストラクタ テスト良好（2014年8月8日）
+	 * 
 	 * @param parentNode
+	 *            ノードの親ノード
 	 * @param childNode
+	 *            ノードの子ノード
 	 */
 	public Branch(Node parentNode, Node childNode)
 	{
@@ -29,7 +32,9 @@ public class Branch extends Object
 
 	/**
 	 * 親ノードのセッター テスト良好（2014年8月8日）
+	 * 
 	 * @param aNode
+	 *            　Nodeクラスのインスタンスを束縛する変数
 	 */
 	public void setParent(Node aNode)
 	{
@@ -38,7 +43,9 @@ public class Branch extends Object
 
 	/**
 	 * 子ノードのセッター テスト良好（2014年8月8日）
+	 * 
 	 * @param aNode
+	 *            Nodeクラスのインスタンスを束縛する変数
 	 */
 	public void setChild(Node aNode)
 	{
@@ -47,7 +54,8 @@ public class Branch extends Object
 
 	/**
 	 * 親ノードのゲッター テスト良好（2014年8月8日）
-	 * @return parentNode
+	 * 
+	 * @return parentNode ノードの親ノード
 	 */
 	public Node getParent()
 	{
@@ -56,7 +64,8 @@ public class Branch extends Object
 
 	/**
 	 * 子ノードのゲッター テスト良好（2014年8月8日）
-	 * @return childNode
+	 * 
+	 * @return childNode　ノードの子ノード
 	 */
 	public Node getChild()
 	{
