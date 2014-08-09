@@ -146,6 +146,18 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
         }
 		return;
 	}
+    /**
+     * マウスがドラックされたときの動作
+     */
+    public void mouseDragged(Point aPoint)
+	{
+        System.out.println(aPoint.x);
+        System.out.println(aPoint.y);
+        
+        aView.scrollTo(aPoint);
+        
+		return;
+	}
     
     
     

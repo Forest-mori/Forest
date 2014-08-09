@@ -15,6 +15,11 @@ public class ForestView extends mvc.View
 {
     
     private Graphics graphic;
+    /**
+	 * スクロール量としてPointのインスタンスを束縛する。
+	 * 良好（2010年7月25日）
+	 */
+	private Point offset;
     
     
 	/**
@@ -25,6 +30,7 @@ public class ForestView extends mvc.View
 	public ForestView(ForestModel aModel, ForestController aController)
 	{
 		super(aModel, aController);
+        offset = new Point(0,0);
 		new JPanel();
 	}
 
@@ -65,8 +71,8 @@ public class ForestView extends mvc.View
 				Point aPoint = null;
 				FontMetrics fm = aGraphics.getFontMetrics();
 
-				int barScore_height = -aModel.getBar();
-				int barScore_wight = -aModel.getBar2();
+				int barScore_height = -aModel.getBar() + offset.y;
+				int barScore_wight = -aModel.getBar2() + offset.x;
 
 				for (Node aTest : aNode.values())
 				{
@@ -101,5 +107,21 @@ public class ForestView extends mvc.View
     {
         return graphic;
     }
+    /**
+	 * スクロール量を指定された座標に設定（絶対スクロール）する。
+	 * 良好（2010年7月25日）
+	 */
+	public void scrollTo(Point aPoint)
+	{
+        System.out.println("変化量.x"+aPoint.x);
+        System.out.println("変化量.y"+aPoint.y);
+        //System.out.println("scrollTo");
+		offset.x = offset.x + aPoint.x;
+        offset.y = offset.y + aPoint.y;
+        System.out.println("x="+offset.x);
+        System.out.println("y="+offset.y);
+        this.repaint();
+		return;
+	}
     
 }

@@ -15,6 +15,10 @@ public class ForestController extends mvc.Controller implements ActionListener
 	 * ForestModelを内包する テスト良好（2014年8月8日）
 	 */
 	private ForestModel model;
+    /**
+     * 前のポインタを保存するようのフィールド
+     */
+    private Point savePoint;
 
 	/**
 	 * フォレストコントローラーのコンストラクタ テスト良好（2014年8月8日）
@@ -24,6 +28,8 @@ public class ForestController extends mvc.Controller implements ActionListener
 	{
 		super();
 		this.model = aModel;
+        savePoint = new Point(0,0);
+
 	}
 
 	/**
@@ -67,5 +73,35 @@ public class ForestController extends mvc.Controller implements ActionListener
 		}
 		return;
 	}
+    /**
+     * マウスがドラックされたときの動作
+     */
+    public void mouseDragged(MouseEvent aMouseEvent)
+	{
+        //System.out.println("テスト");
+        Point aPoint = aMouseEvent.getPoint();
+        if(savePoint.x != 0 && savePoint.y != 0)
+        {
+            int x = aPoint.x - savePoint.x;
+            int y = aPoint.y - savePoint.y;
+            //System.out.println("x==="+x);
+            //System.out.println("y==="+y);
+            
+            
+            
+            this.model.mouseDragged(new Point(x,y));
+        }
+        savePoint = aPoint;
+		return;
+	}
+    /**
+     * マウスが離れたときの処理
+     */
+	public void mouseReleased(MouseEvent aMouseEvent)
+	{
+		savePoint = new Point(0,0);
+		return;
+	}
+
 
 }
