@@ -134,8 +134,9 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	 */
 	public void mouseClicked(Point aPoint, MouseEvent aMouseEvent)
 	{
+        FontMetrics fm = this.aView.getGraphic().getFontMetrics();
         for (Node node: this.getForest().getNode().values()) {
-            if(node.getNodeLocation().x <= aPoint.x && node.getNodeLocation().x+node.getName().length() * 10 >= aPoint.x)
+            if(node.getNodeLocation().x <= aPoint.x && node.getNodeLocation().x+fm.stringWidth(node.getName()) >= aPoint.x)
             {
                 if(node.getNodeLocation().y <= aPoint.y && node.getNodeLocation().y+16 >= aPoint.y)
                 {
