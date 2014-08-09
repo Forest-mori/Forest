@@ -3,6 +3,7 @@ package forest;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Point;
 
 /**
  * ForestControllerクラス テスト良好（2014年8月8日）
@@ -57,6 +58,13 @@ public class ForestController extends mvc.Controller implements ActionListener
 			showPopupMenu(aMouseEvent);
 		}
 
+        if (aMouseEvent.getButton() == 1)
+		{
+			Point aPoint = aMouseEvent.getPoint();
+            aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
+            this.model.mouseClicked(aPoint, aMouseEvent);
+            return;
+		}
 		return;
 	}
 

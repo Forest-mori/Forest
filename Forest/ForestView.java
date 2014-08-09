@@ -13,7 +13,10 @@ import java.util.ArrayList;
  */
 public class ForestView extends mvc.View
 {
-
+    
+    private Graphics graphic;
+    
+    
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月8日）
 	 * @param aModel
@@ -33,6 +36,7 @@ public class ForestView extends mvc.View
 	{
 		super.paintComponent(aGraphics);
 		ForestModel aModel = (ForestModel) model;
+        this.graphic = aGraphics;
 		if (aModel == null)
 		{
 			System.out.println("モデルが内包されていません");
@@ -92,4 +96,10 @@ public class ForestView extends mvc.View
 
 		return;
 	}
+    
+    public Graphics getGraphic()
+    {
+        return graphic;
+    }
+    
 }
