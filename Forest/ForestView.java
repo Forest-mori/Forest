@@ -20,7 +20,10 @@ public class ForestView extends mvc.View
 	 * 良好（2010年7月25日）
 	 */
 	private Point offset;
-    
+    /**
+     * 保存用Point
+     */
+    private Point savePoint;
     
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月8日）
@@ -31,6 +34,7 @@ public class ForestView extends mvc.View
 	{
 		super(aModel, aController);
         offset = new Point(0,0);
+        savePoint = new Point(0,0);
 		new JPanel();
 	}
 
@@ -73,6 +77,8 @@ public class ForestView extends mvc.View
 
 				int barScore_height = -aModel.getBar() + offset.y;
 				int barScore_wight = -aModel.getBar2() + offset.x;
+                
+                setOffset(new Point(barScore_wight,barScore_height));
 
 				for (Node aTest : aNode.values())
 				{
@@ -123,5 +129,13 @@ public class ForestView extends mvc.View
         this.repaint();
 		return;
 	}
+    public void setOffset(Point aPoint)
+    {
+        savePoint = aPoint;
+    }
+    public Point getOffset()
+    {
+        return savePoint;
+    }
     
 }
