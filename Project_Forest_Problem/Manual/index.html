@@ -255,6 +255,7 @@ th {
         <pre class="belt">
             $ unzip Forest.zip
             Archive:  Forest.zip
+            creating: Forest/
             creating: Forest/Forest.app/
             creating: Forest/Forest.app/Contents/
             creating: Forest/Forest.app/Contents/MacOS/
@@ -278,14 +279,12 @@ th {
             inflating: Forest/forest/Forest.java
             inflating: Forest/forest/ForestController.java
             inflating: Forest/forest/ForestModel.java
-            inflating: Forest/forest/ForestView.java
-            inflating: Forest/forest/Node.java
+            inflating: Forest/forest/ForestView.java  
+            inflating: Forest/forest/Node.java  
             inflating: Forest/mvc.jar          
-            inflating: Forest/sumida.zip       
-            inflating: Forest/suzumu.zip       
             inflating: Forest/texts/forest.txt  
             inflating: Forest/texts/semilattice.txt  
-            inflating: Forest/texts/tree.txt
+            inflating: Forest/texts/tree.txt   
         </pre>
         <li>展開して得られるForestというディレクトリへ移る。
             <pre class="belt">
@@ -294,8 +293,7 @@ th {
             <li>中身を確認する。
                 <pre class="belt">
                     $ ls *
-                    Makefile	forest.mf	sumida.zip
-                    build.xml	mvc.jar		suzumu.zip
+                    Makefile	build.xml	forest.mf	mvc.jar
                     
                     Forest.app:
                     Contents
@@ -314,37 +312,31 @@ th {
                         $ make
                         env LC_ALL=ja_JP.UTF-8 ant all
                         Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
-                        Buildfile: /Users/sumidatomoyuki/Forest/build.xml
+                        Buildfile: /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/build.xml
                         
                         prepare:
-                        [mkdir] Created dir: /Users/sumidatomoyuki/Forest/Classes
-                        [echo] on 2014/08/08 at 22:22:47
+                        [mkdir] Created dir: /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/Classes
+                        [echo] on 2014/08/09 at 23:11:26
                         
                         compile:
-                        [javac] Compiling 7 source files to /Users/sumidatomoyuki/Forest/Classes
+                        [javac] Compiling 7 source files to /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/Classes
                         [javac] Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
-                        [echo] on 2014/08/08 at 22:22:47
+                        [echo] on 2014/08/09 at 23:11:26
                         
                         jar:
-                        [jar] Building jar: /Users/sumidatomoyuki/Forest/forest.jar
-                        [echo] on 2014/08/08 at 22:22:47
+                        [jar] Building jar: /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/forest.jar
+                        [echo] on 2014/08/09 at 23:11:26
                         
                         all:
-                        [echo] on 2014/08/08 at 22:22:47
+                        [echo] on 2014/08/09 at 23:11:26
                         
                         BUILD SUCCESSFUL
                         Total time: 2 seconds
-                        
                     </pre>
                     <li>forest.jarが生成されていることを確かめる。
                         <pre class="belt">
                             $ ls *
-                            Makefile	forest.jar	mvc.jar		suzumu.zip
-                            build.xml	forest.mf	sumida.zip
-                            
-                            Astah:
-                            Forest.asta		Forestsyousai.asta	class.jpg.bak
-                            Forest.asta.bak		class.jpg		forestsyousai.jpg
+                            Makefile	build.xml	forest.jar	forest.mf	mvc.jar
                             
                             Classes:
                             forest
@@ -352,51 +344,41 @@ th {
                             Forest.app:
                             Contents
                             
-                            Project_Forest_Problem:
-                            BasicDesign		Manual			TestSpecification
-                            DetailDesign		Program			index.html
-                            DevelopmentPlan		Requirement
-                            DevelopmentResult	TestResult
-                            
                             forest:
                             Branch.java		ForestController.java	Node.java
                             Example.java		ForestModel.java
                             Forest.java		ForestView.java
                             
                             texts:
-                            forest.txt	semilattice.txt	tree.txt                        </pre>
+                            forest.txt	semilattice.txt	tree.txt
+                        </pre>
                         
                         <li>生成したforest.jarをアプリケーション（Forest.app）の中にインストールする。
                             <pre class="belt">
                                 $ make install
                                 env LC_ALL=ja_JP.UTF-8 ant install
                                 Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
-                                Buildfile: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/build.xml
+                                Buildfile: /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/build.xml
                                 
                                 prepare:
-                                [mkdir] Created dir: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Classes
-                                [echo] on 2014/08/08 at 22:25:44
+                                [echo] on 2014/08/09 at 23:12:10
                                 
                                 compile:
-                                [javac] Compiling 7 source files to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Classes
-                                [javac] Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
-                                [echo] on 2014/08/08 at 22:25:44
+                                [echo] on 2014/08/09 at 23:12:10
                                 
                                 jar:
-                                [jar] Building jar: /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/forest.jar
-                                [echo] on 2014/08/08 at 22:25:44
+                                [echo] on 2014/08/09 at 23:12:10
                                 
                                 all:
-                                [echo] on 2014/08/08 at 22:25:44
+                                [echo] on 2014/08/09 at 23:12:10
                                 
                                 install:
-                                [copy] Copying 1 file to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Forest.app/Contents/Resources/Java
-                                [copy] Copying 3 files to /Users/sumidatomoyuki/Desktop/musicmedia/aaa/Forest/Forest.app/Contents/Resources/Java/texts
-                                [echo] on 2014/08/08 at 22:25:44
+                                [copy] Copying 1 file to /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/Forest.app/Contents/Resources/Java
+                                [copy] Copying 3 files to /Users/sumidatomoyuki/Desktop/musicmedia/s/Forest/Forest.app/Contents/Resources/Java/texts
+                                [echo] on 2014/08/09 at 23:12:10
                                 
                                 BUILD SUCCESSFUL
-                                Total time: 2 seconds
-
+                                Total time: 0 seconds
                             </pre>
                             
                             
