@@ -11,48 +11,48 @@ import java.io.FileNotFoundException;
 import java.util.TreeMap;
 
 /**
- * Forestクラス テスト良好（2014年8月8日）
+ * Forestクラス テスト良好（2014年8月9日）
  */
 public class Forest extends Object
 {
 
 	/**
-	 * ノードを番号と一緒に束縛する テスト良好（2014年8月8日）
+	 * ノードを番号と一緒に束縛する テスト良好（2014年8月9日）
 	 */
 	private TreeMap<Integer, Node> nodes;
 
 	/**
-	 * 一時的にノードの深さを保存する テスト良好（2014年8月8日）
+	 * 一時的にノードの深さを保存する テスト良好（2014年8月9日）
 	 */
 	private HashMap<String, Integer> depths;
 
 	/**
-	 * ブランチを束縛する テスト良好（2014年8月8日）
+	 * ブランチを束縛する テスト良好（2014年8月9日）
 	 */
 	private ArrayList<Branch> branches;
 
 	/**
-	 * ルートノードを束縛する テスト良好（2014年8月8日）
+	 * ルートノードを束縛する テスト良好（2014年8月9日）
 	 */
 	private ArrayList<Node> roots;
 
 	/**
-	 * テキストのタイプを表す。tree = 0,node = 1, branch = 2 テスト良好（2014年8月8日）
+	 * テキストのタイプを表す。tree = 0,node = 1, branch = 2 テスト良好（2014年8月9日）
 	 */
 	private int textType;
 
 	/**
-	 * 画面更新用にForestModelを束縛する テスト良好（2014年8月8日）
+	 * 画面更新用にForestModelを束縛する テスト良好（2014年8月9日）
 	 */
 	private ForestModel aModel;
 
 	/**
-	 * 一番下のy座標を持つ変数 テスト良好（2014年8月8日）
+	 * 一番下のy座標を持つ変数 テスト良好（2014年8月9日）
 	 */
 	public static int underY;
 
 	/**
-	 * フォレストのコンストラクタ テスト良好（2014年8月8日）
+	 * フォレストのコンストラクタ テスト良好（2014年8月9日）
 	 * 
 	 * @param aModel
 	 *            　ForestModelを内包する変数
@@ -69,7 +69,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ForestModelで取ってきたテキストファイルを読み込む テスト良好（2014年8月8日）
+	 * ForestModelで取ってきたテキストファイルを読み込む テスト良好（2014年8月9日）
 	 * 
 	 * @param aFile
 	 *            検査対象となるファイル
@@ -143,7 +143,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * readで読み込んだデータを元に木を作る テスト良好（2014年8月8日）
+	 * readで読み込んだデータを元に木を作る テスト良好（2014年8月9日）
 	 * 
 	 * @param data
 	 *            読み込んだデータ
@@ -178,7 +178,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * 探索処理をして、モデルに通知して画面を更新する テスト良好（2014年8月8日）
+	 * 探索処理をして、モデルに通知して画面を更新する テスト良好（2014年8月9日）
 	 * 
 	 * @param aNode
 	 *            Forestクラスのインスタンスを束縛する変数
@@ -242,7 +242,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ノードのゲッター テスト良好（2014年8月8日）
+	 * ノードのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return nodes ノードを番号と一緒に束縛している変数
 	 */
@@ -252,7 +252,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ルートノードのゲッター テスト良好（2014年8月8日）
+	 * ルートノードのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return roots ルートノードを束縛する変数
 	 */
@@ -262,7 +262,7 @@ public class Forest extends Object
 	}
 
 	/**
-	 * ブランチのゲッター テスト良好（2014年8月8日）
+	 * ブランチのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return branches ブランチを束縛する変数
 	 */

@@ -19,57 +19,57 @@ import java.awt.Point;
 import java.awt.FontMetrics;
 
 /**
- * ForestModelクラス テスト良好（2014年8月8日）
+ * ForestModelクラス テスト良好（2014年8月9日）
  */
 public class ForestModel extends mvc.Model implements AdjustmentListener
 {
 	/**
-	 * Forestクラスのインスタンスを束縛する変数 テスト良好（2014年8月8日）
+	 * Forestクラスのインスタンスを束縛する変数 テスト良好（2014年8月9日）
 	 */
 	private Forest aForest;
 
 	/**
-	 * JFrameを束縛する テスト良好（2014年8月8日）
+	 * JFrameを束縛する テスト良好（2014年8月9日）
 	 */
 	public JFrame aWindow;
 
 	/**
-	 * ForestView を内包する テスト良好（2014年8月8日）
+	 * ForestView を内包する テスト良好（2014年8月9日）
 	 */
 	protected ForestView aView;
 
 	/**
-	 * スクロールバーを保存するフィールド（縦） テスト良好（2014年8月8日）
+	 * スクロールバーを保存するフィールド（縦） テスト良好（2014年8月9日）
 	 */
 	public JScrollBar bar_height;
 
 	/**
-	 * スクロールバーを保存するフィールド（横） テスト良好（2014年8月8日）
+	 * スクロールバーを保存するフィールド（横） テスト良好（2014年8月9日）
 	 */
 	public JScrollBar bar_wight;
 
 	/**
-	 * 縦のスクロール量を保存するフィールド テスト良好（2014年8月8日）
+	 * 縦のスクロール量を保存するフィールド テスト良好（2014年8月9日）
 	 */
 	private int barScore_height;
 
 	/**
-	 * 横のスクロール量を保存するフィールド テスト良好（2014年8月8日）
+	 * 横のスクロール量を保存するフィールド テスト良好（2014年8月9日）
 	 */
 	private int barScore_wight;
 
 	/**
-	 * 整列を止めるか止めないかを決める変数 テスト良好（2014年8月8日）
+	 * 整列を止めるか止めないかを決める変数 テスト良好（2014年8月9日）
 	 */
 	public boolean flag;
 
 	/**
-	 * File chooserの初期パス指定 テスト良好（2014年8月8日）
+	 * File chooserの初期パス指定 テスト良好（2014年8月9日）
 	 */
 	public String aFileChooserDirectory = "./texts";
 
 	/**
-	 * コンストラクタ テスト良好（2014年8月8日）
+	 * コンストラクタ テスト良好（2014年8月9日）
 	 */
 	public ForestModel()
 	{
@@ -88,7 +88,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月8日）
+	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月9日）
 	 *
 	 * @param anActionEvent
 	 *            とあるアクションのイベント
@@ -102,7 +102,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * メニューをポップアップする。 テスト良好（2014年8月8日）
+	 * メニューをポップアップする。 テスト良好（2014年8月9日）
 	 *
 	 * @param aMouseEvent
 	 *            マウスのイベント
@@ -130,7 +130,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * マウスクリックした位置を座標として受け取り、その位置にNodeがあれば出力 テスト良好（2014年8月8日)
+	 * マウスクリックした位置を座標として受け取り、その位置にNodeがあれば出力 テスト良好（2014年8月9日)
 	 *
 	 * @param aPoint
 	 *            ピクチャ座標
@@ -173,7 +173,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * ファイルを選んでくるメソッド テスト良好（2014年8月8日）
+	 * ファイルを選んでくるメソッド テスト良好（2014年8月9日）
 	 *
 	 * @param aFileChooserDirectory
 	 *            File chooserの初期ディレクトリパス
@@ -190,7 +190,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * ウィンドウを表示させる テスト良好（2014年8月8日）
+	 * ウィンドウを表示させる テスト良好（2014年8月9日）
 	 */
 	public void open()
 	{
@@ -219,7 +219,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * Forestのインスタンスのゲッター テスト良好（2014年8月8日）
+	 * Forestのインスタンスのゲッター テスト良好（2014年8月9日）
 	 *
 	 * @return aForest　Forestクラスのインスタンスを束縛する変数
 	 */
@@ -229,7 +229,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * スクロールの取得 テスト良好（2014年8月8日）
+	 * スクロールの取得 テスト良好（2014年8月9日）
 	 *
 	 * @param e
 	 *            　変更時のイベント
@@ -246,7 +246,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * 縦スクロールのゲッター テスト良好（2014年8月8日）
+	 * 縦スクロールのゲッター テスト良好（2014年8月9日）
 	 *
 	 * @return barScore_height スクロールバーを保存するフィールド（縦）
 	 */
@@ -256,7 +256,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * 横スクロールのゲッター テスト良好（2014年8月8日）
+	 * 横スクロールのゲッター テスト良好（2014年8月9日）
 	 *
 	 * @return barScore_wight スクロールバーを保存するフィールド（横）
 	 */
@@ -266,7 +266,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 	}
 
 	/**
-	 * フラグのゲッター テスト良好（2014年8月8日）
+	 * フラグのゲッター テスト良好（2014年8月9日）
 	 *
 	 * @return flag フラグ
 	 */

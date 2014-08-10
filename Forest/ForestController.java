@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import java.awt.Point;
 
 /**
- * ForestControllerクラス テスト良好（2014年8月8日）
+ * ForestControllerクラス テスト良好（2014年8月9日）
  */
 public class ForestController extends mvc.Controller implements ActionListener
 {
 
 	/**
-	 * ForestModelを内包する テスト良好（2014年8月8日）
+	 * ForestModelを内包する テスト良好（2014年8月9日）
 	 */
 	private ForestModel model;
 	/**
@@ -21,7 +21,7 @@ public class ForestController extends mvc.Controller implements ActionListener
 	private Point savePoint;
 
 	/**
-	 * フォレストコントローラーのコンストラクタ テスト良好（2014年8月8日）
+	 * フォレストコントローラーのコンストラクタ テスト良好（2014年8月9日）
 	 * 
 	 * @param aModel
 	 *            ForestModelを内包する変数
@@ -35,7 +35,7 @@ public class ForestController extends mvc.Controller implements ActionListener
 	}
 
 	/**
-	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月8日）
+	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月9日）
 	 * 
 	 * @param anActionEvent
 	 *            とあるアクションのイベント
@@ -47,7 +47,7 @@ public class ForestController extends mvc.Controller implements ActionListener
 	}
 
 	/**
-	 * メニューをポップアップする。 テスト良好（2014年8月8日）
+	 * メニューをポップアップする。 テスト良好（2014年8月9日）
 	 * 
 	 * @param aMouseEvent
 	 *            マウスのイベント
@@ -59,7 +59,7 @@ public class ForestController extends mvc.Controller implements ActionListener
 	}
 
 	/**
-	 * マウスボタンが押されたときの処理をする。 テスト良好（2014年8月8日）
+	 * マウスボタンが押されたときの処理をする。 テスト良好（2014年8月9日）
 	 * 
 	 * @param aMouseEvent
 	 *            マウスのイベント

@@ -9,7 +9,7 @@ import java.awt.FontMetrics;
 import java.util.ArrayList;
 
 /**
- * ForestViewクラス テスト良好（2014年8月8日）
+ * ForestViewクラス テスト良好（2014年8月9日）
  */
 public class ForestView extends mvc.View
 {
@@ -20,7 +20,7 @@ public class ForestView extends mvc.View
 	private Graphics graphic;
 
 	/**
-	 * スクロール量としてPointのインスタンスを束縛する。 テスト良好（2010年7月25日）
+	 * スクロール量としてPointのインスタンスを束縛する。 テスト良好（2014年8月9日）
 	 */
 	private Point offset;
 
@@ -30,7 +30,7 @@ public class ForestView extends mvc.View
 	private Point savePoint;
 
 	/**
-	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月8日）
+	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。 テスト良好（2014年8月9日）
 	 * 
 	 * @param aModel
 	 *            ForestModelを内包する変数
@@ -46,7 +46,7 @@ public class ForestView extends mvc.View
 	}
 
 	/**
-	 * 描画を行う。 テスト良好（2014年8月8日）
+	 * 描画を行う。 テスト良好（2014年8月9日）
 	 * 
 	 * @param aGraphics
 	 *            指定されたグラフィックス
@@ -130,7 +130,7 @@ public class ForestView extends mvc.View
 	}
 
 	/**
-	 * スクロール量を指定された座標に設定（絶対スクロール）する。 テスト良好（2010年7月25日）
+	 * スクロール量を指定された座標に設定（絶対スクロール）する。 テスト良好（2014年8月9日）
 	 * 
 	 * @param aPoint
 	 *            ピクチャ座標

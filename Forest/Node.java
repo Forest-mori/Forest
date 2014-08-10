@@ -5,47 +5,47 @@ import java.awt.Point;
 import java.util.Collections;
 
 /**
- * Nodeクラス テスト良好（2014年8月8日）
+ * Nodeクラス テスト良好（2014年8月9日）
  */
 public class Node extends Object
 {
 	/**
-	 * ノードの番号を束縛する テスト良好（2014年8月8日）
+	 * ノードの番号を束縛する テスト良好（2014年8月9日）
 	 */
 	private int nodeNumber;
 
 	/**
-	 * ノードの名前を束縛する テスト良好（2014年8月8日）
+	 * ノードの名前を束縛する テスト良好（2014年8月9日）
 	 */
 	private String nodeName;
 
 	/**
-	 * このノードの親を束縛する テスト良好（2014年8月8日）
+	 * このノードの親を束縛する テスト良好（2014年8月9日）
 	 */
 	private ArrayList<Node> Parents;
 
 	/**
-	 * このノードの子を束縛する テスト良好（2014年8月8日）
+	 * このノードの子を束縛する テスト良好（2014年8月9日）
 	 */
 	private ArrayList<Node> Children;
 
 	/**
-	 * このノードの深さを束縛する テスト良好（2014年8月8日）
+	 * このノードの深さを束縛する テスト良好（2014年8月9日）
 	 */
 	private int depth;
 
 	/**
-	 * 探索したかどうかを確認するための属性.未探索→false,探索済→true テスト良好（2014年8月8日）
+	 * 探索したかどうかを確認するための属性.未探索→false,探索済→true テスト良好（2014年8月9日）
 	 */
 	private boolean visit;
 
 	/**
-	 * ノードの一座標を束縛する テスト良好（2014年8月8日）
+	 * ノードの一座標を束縛する テスト良好（2014年8月9日）
 	 */
 	private Point aPoint;
 
 	/**
-	 * ノードのコンストラクタ テスト良好（2014年8月8日）
+	 * ノードのコンストラクタ テスト良好（2014年8月9日）
 	 * 
 	 * @param num
 	 *            ノードのナンバリング
@@ -66,7 +66,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノード番号のゲッター テスト良好（2014年8月8日）
+	 * ノード番号のゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return nodeNumber ノードのナンバリング
 	 */
@@ -76,7 +76,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノード名のゲッター テスト良好（2014年8月8日）
+	 * ノード名のゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return nodeName　ノードの名前
 	 */
@@ -86,7 +86,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの深さのゲッター テスト良好（2014年8月8日）
+	 * ノードの深さのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return depth　ノードの深さ
 	 */
@@ -96,7 +96,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの親ノードのゲッター テスト良好（2014年8月8日）
+	 * ノードの親ノードのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return parents　ノードの親ノード
 	 */
@@ -106,7 +106,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの子ノードのゲッター テスト良好（2014年8月8日）
+	 * ノードの子ノードのゲッター テスト良好（2014年8月9日）
 	 * 
 	 * @return Children　ノードの子ノード
 	 */
@@ -116,7 +116,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの親ノードを設定する テスト良好（2014年8月8日）
+	 * ノードの親ノードを設定する テスト良好（2014年8月9日）
 	 * 
 	 * @param aNode
 	 *            　Nodeクラスのインスタンスを束縛する変数
@@ -127,7 +127,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの子ノードを設定する テスト良好（2014年8月8日）
+	 * ノードの子ノードを設定する テスト良好（2014年8月9日）
 	 * 
 	 * @param aNode
 	 *            Nodeクラスのインスタンスを束縛する変数
@@ -139,7 +139,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * 探索済みと設定する テスト良好（2014年8月8日）
+	 * 探索済みと設定する テスト良好（2014年8月9日）
 	 */
 	public void setVisit()
 	{
@@ -147,7 +147,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * 探索したかどうか確認する テスト良好（2014年8月8日）
+	 * 探索したかどうか確認する テスト良好（2014年8月9日）
 	 * 
 	 * @return visit 探索済みかどうか応答する変数
 	 */
@@ -157,7 +157,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * このノードの座標を返す テスト良好（2014年8月8日）
+	 * このノードの座標を返す テスト良好（2014年8月9日）
 	 * 
 	 * @return aPoint ピクチャ座標
 	 */
@@ -167,7 +167,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * ノードの座標の初期設定をする テスト良好（2014年8月8日）
+	 * ノードの座標の初期設定をする テスト良好（2014年8月9日）
 	 * 
 	 * @param x
 	 *            ノードのx座標
@@ -180,7 +180,7 @@ public class Node extends Object
 	}
 
 	/**
-	 * このノードの座標を変更する テスト良好（2014年8月8日）
+	 * このノードの座標を変更する テスト良好（2014年8月9日）
 	 * 
 	 * @param x
 	 *            ノードのx座標
@@ -195,12 +195,12 @@ public class Node extends Object
 }
 
 /**
- * ノードを辞書順にするコンパレータクラス テスト良好（2014年8月8日）
+ * ノードを辞書順にするコンパレータクラス テスト良好（2014年8月9日）
  */
 class Comparator implements java.util.Comparator<Object>
 {
 	/**
-	 * ソートするコンパレーター テスト良好（2014年8月8日）
+	 * ソートするコンパレーター テスト良好（2014年8月9日）
 	 * 
 	 * @param node1
 	 *            　比較するノード
