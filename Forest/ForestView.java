@@ -15,7 +15,7 @@ public class ForestView extends mvc.View
 {
 
 	/**
-	 * テスト良好(2014年8月9日)
+	 * 指定されたforestグラフィックス　テスト良好(2014年8月9日)
 	 */
 	private Graphics graphic;
 
@@ -49,17 +49,18 @@ public class ForestView extends mvc.View
 	 * 描画を行う。 テスト良好（2014年8月8日）
 	 * 
 	 * @param aGraphics
+	 *            指定されたグラフィックス
 	 */
 	@Override
 	public void paintComponent(Graphics aGraphics)
 	{
 		super.paintComponent(aGraphics);
 		ForestModel aModel = (ForestModel) model;
-		this.graphic = aGraphics;
 		if (aModel == null)
 		{
 			System.out.println("モデルが内包されていません");
 		}
+		this.graphic = aGraphics;
 		Forest aForest = aModel.getForest();
 		if (aForest == null)
 		{
@@ -119,9 +120,9 @@ public class ForestView extends mvc.View
 	}
 
 	/**
-	 * テスト良好(2014年8月9日)
+	 * 指定されたforestグラフィックスのゲッター　テスト良好(2014年8月9日)
 	 * 
-	 * @return graphic
+	 * @return graphic 指定されたforestグラフィックス
 	 */
 	public Graphics getGraphic()
 	{
@@ -152,7 +153,7 @@ public class ForestView extends mvc.View
 	 * 保存用スクロール座標のセッター　テスト良好（2014年8月9日）
 	 * 
 	 * @param aPoint
-	 *            　ピクチャ座標
+	 *            　スクロール座標
 	 */
 	public void setOffset(Point aPoint)
 	{
@@ -162,7 +163,7 @@ public class ForestView extends mvc.View
 	/**
 	 * 保存用スクロール座標のゲッター　テスト良好（2014年8月9日）
 	 * 
-	 * @return savePoint 保存用ピクチャ座標
+	 * @return savePoint 保存用スクロール座標
 	 */
 	public Point getOffset()
 	{

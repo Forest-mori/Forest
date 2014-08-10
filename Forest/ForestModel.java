@@ -89,7 +89,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * ポップアップメニューの項目が選択された時の処理をするメソッド テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @param anActionEvent
 	 *            とあるアクションのイベント
 	 */
@@ -103,7 +103,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * メニューをポップアップする。 テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @param aMouseEvent
 	 *            マウスのイベント
 	 * @param aController
@@ -131,7 +131,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * マウスクリックした位置を座標として受け取り、その位置にNodeがあれば出力 テスト良好（2014年8月8日)
-	 * 
+	 *
 	 * @param aPoint
 	 *            ピクチャ座標
 	 * @param aMouseEvent
@@ -161,7 +161,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * マウスがドラックされたときの動作 テスト良好(2014年8月9日)
-	 * 
+	 *
 	 * @param aPoint
 	 *            　ピクチャ座標
 	 */
@@ -174,7 +174,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * ファイルを選んでくるメソッド テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @param aFileChooserDirectory
 	 *            File chooserの初期ディレクトリパス
 	 * @return ch.getSelectedFile() 選択ファイル
@@ -220,7 +220,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * Forestのインスタンスのゲッター テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @return aForest　Forestクラスのインスタンスを束縛する変数
 	 */
 	public Forest getForest()
@@ -230,7 +230,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * スクロールの取得 テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @param e
 	 *            　変更時のイベント
 	 */
@@ -247,7 +247,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * 縦スクロールのゲッター テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @return barScore_height スクロールバーを保存するフィールド（縦）
 	 */
 	public int getBar()
@@ -257,7 +257,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * 横スクロールのゲッター テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @return barScore_wight スクロールバーを保存するフィールド（横）
 	 */
 	public int getBar2()
@@ -267,7 +267,7 @@ public class ForestModel extends mvc.Model implements AdjustmentListener
 
 	/**
 	 * フラグのゲッター テスト良好（2014年8月8日）
-	 * 
+	 *
 	 * @return flag フラグ
 	 */
 	public boolean getFlag()
